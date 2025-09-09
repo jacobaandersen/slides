@@ -1,6 +1,6 @@
 index:
-  title: Jakob Hærvig's Slidedecks
-  favicon: https://jakobhaervig.com/cdn/favicon/favicon.ico
+  title: Slides
+  favicon: 
   theme: https://jakobhaervig.com/cdn/styles/reveal-js/index.css
   template: docs/index.jinja
 
@@ -9,7 +9,7 @@ slides:
   separator: ^\s*---\s*$
   separator_vertical: ^\s*-v-\s*$
   separator_notes: "^Notes?:"
-  favicon: https://jakobhaervig.com/cdn/favicon/favicon.ico
+  favicon: https://jcobandersen.com/cdn/favicon/favicon.ico
   theme: https://jakobhaervig.com/cdn/styles/reveal-js/slides.css
   template: docs/slides.jinja
 
