@@ -1,5 +1,5 @@
 ---
-title: "Fluid Mechanics Course: Boundary layers"
+title: "Course - Fluid Mechanics: Boundary layers"
 ---
 
 # Debug slides
