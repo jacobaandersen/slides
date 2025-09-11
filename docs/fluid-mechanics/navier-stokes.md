@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ## What are they? 
 <ul>
-  <li class="fragment">Very general set of equations describing almost any flow of fluids
+  <li class="fragment">Popularly: Very general set of equations describing almost any flow of fluids
   <li class="fragment">Vast span of applications 
 </ul>
 
@@ -50,7 +50,7 @@ Aeroplane, Wind turbine, Weather forecast, Indoor heat exchange, Room
   <li class="fragment">The most general form of the Navier-Stokes equations 
   </li>
 </ul>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span style="display:block; margin-top:0.9em;"></span>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span style="display:block; margin-top:1.6em;"></span>
 ---
 
 ## What makes them special?
