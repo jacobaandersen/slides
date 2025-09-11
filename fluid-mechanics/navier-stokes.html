@@ -103,10 +103,36 @@ Aeroplane, Wind turbine, Weather forecast, Indoor heat exchange, Room
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-&lt;span class=&#34;fragment&#34; style=&#34;font-size:0.75em; color: #555; display: block; text-align: center;&#34;&gt;Flow over stalled airfoil&lt;/span&gt;
+&lt;span class=&#34;fragment&#34; style=&#34;font-size:0.75em; color: #555; display: block; text-align: center;
+
 &lt;span class=&#34;fragment&#34; style=&#34;display: block; text-align: center;&#34;&gt;
-  &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/-1h9frhwVEI?autoplay=1&amp;mute=1&#34; allow=&#34;autoplay; encrypted-media&#34; allowfullscreen&gt;&lt;/iframe&gt;
+  &lt;p&gt; Flow over stalled airfoil&lt;/span&gt; &lt;/p&gt;
+  &lt;iframe width=&#34;560&#34; height=&#34;315&#34; data-src=&#34;https://www.youtube.com/embed/-1h9frhwVEI?autoplay=1&amp;mute=1&#34; src=&#34;&#34; allow=&#34;autoplay; encrypted-media&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/span&gt;
+
+&lt;script&gt;
+  // Helper: Reset iframe source to restart video
+  function restartVideo(iframe) {
+    const src = iframe.getAttribute(&#39;data-src&#39;);
+    iframe.src = &#39;&#39;;           // unload
+    setTimeout(() =&gt; {         // ensure browser re-requests
+      iframe.src = src;
+    }, 50);
+  }
+
+  // Trigger when a fragment is shown
+  Reveal.on(&#39;fragmentshown&#39;, event =&gt; {
+    const iframe = event.fragment.querySelector(&#39;iframe&#39;);
+    if (iframe) restartVideo(iframe);
+  });
+
+  // Optional: Also restart if you revisit the slide
+  Reveal.on(&#39;slidechanged&#39;, event =&gt; {
+    event.currentSlide.querySelectorAll(&#39;.fragment iframe&#39;).forEach(iframe =&gt; {
+      iframe.src = &#39;&#39;; // clear on slide enter
+    });
+  });
+&lt;/script&gt;
 &lt;ul&gt;
   &lt;li class=&#34;fragment&#34;&gt;Note: Incompressibility is still a very accurate assumption used in most engineering applications&lt;/li&gt;
 &lt;/ul&gt;
