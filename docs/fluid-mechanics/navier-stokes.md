@@ -1,10 +1,258 @@
 ---
-title: "Course - Fluid Mechanics: Navier Stokes Equations"
+title: "Course - Fluid Mechanics: Navier-Stokes Equations"
+---
+<style>
+h1, h2, h3, h4, h5, h6 {
+  text-align: left !important;
+  margin-top: 0.1em !important;
+}
+.smaller-text {
+  font-size: 0.85em;
+}
+</style>
+
+**Fluid Mechanics: Lecture 4**
+## The Navier-Stokes Equations <br><br>
+
+**Lecturer: Jacob Andersen** <br>
+<span class="smaller-text">
+*Slides by Asst. Prof. Jacob Andersen (AAU BUILD) and Assoc. Prof. Jakob Hærvig (AAU ENERGY)*
+</span>
+
+---
+<!-- Slide 2 -->
+
+## Any experience with the Navier-Stokes Equations?
+
+
+---
+<!-- Slide 3 -->
+
+## What are they? 
+<ul>
+  <li class="fragment">Very general set of equations describing almost any flow of fluids
+  <li class="fragment">Vast span of applications 
+</ul>
+
+Aeroplane, Wind turbine, Weather forecast, Indoor heat exchange, Room 
+
+---
+<!-- Slide 3 -->
+
+## What makes them special?
+
+<ul>
+  <li class="fragment">Recall: Potential flow theory (Lecture 3)
+    <ul>
+      <li class="fragment">Inviscid, irrotational, incompressible flow</li>
+    </ul>
+  </li>
+  <li class="fragment">The most general form of the Navier-Stokes equations 
+  </li>
+</ul>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><span style="display:block; margin-top:0.9em;"></span>
 ---
 
-# Introduction
+## What makes them special?
 
-These slides are used for debugging, otherwise there is nothing to see here ... .
+<ul>
+  <li>Recall: Potential flow theory (Lecture 3)
+    <ul>
+      <li style="opacity:0.3; text-decoration:line-through;">Inviscid, irrotational, incompressible flow</li>
+    </ul>
+  </li>
+  <li>The most general form of the Navier-Stokes equations 
+    <ul>
+      <li style="background: #ffe5cc; border-radius: 6px; padding: 2px 6px; font-weight: bold;">Viscid, rotational, compressible flow</li>
+      <li class="fragment">Huge impact on the complexity of the flow &rarr; <b>Turbulence</b></li>
+    </ul>
+  </li>
+</ul>
+<span class="fragment" style="font-size:0.75em; color: #555; display: block; text-align: center;">Flow over stalled airfoil</span>
+<span class="fragment" style="display: block; text-align: center;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/-1h9frhwVEI?autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</span>
+<ul>
+  <li class="fragment">Note: Incompressibility is still a very accurate assumption used in most engineering applications</li>
+</ul>
+
+---
+
+# Applications
+
+---
+
+---
+<!-- Slide 4 -->
+
+## Richard Feynman on Turbulence
+
+> Turbulence is the most important unsolved problem of classical physics  
+> [Eames & Flor (2011)](https://royalsocietypublishing.org/doi/10.1098/rsta.2010.0332)
+<!-- .element: class="fragment" -->
+
+> There is a physical problem that is common to many fields, that is very old, and that has not been solved. It is not the problem of finding new fundamental particles, but something left over from a long time ago—over a hundred years. Nobody in physics has really been able to analyze it mathematically satisfactorily in spite of its importance to the sister sciences. It is the analysis of circulating or turbulent fluids. <br>
+> [Feynman et al. (1965)](https://www.goodreads.com/book/show/17278.The_Feynman_Lectures_on_Physics_Vol_1)
+<!-- .element: class="fragment" -->
+---
+<!-- Slide 5 -->
+## A Millennium Problem
+
+The Clay Mathematics Institute has identified the existence and smoothness of solutions to the Navier-Stokes equations as one of the seven Millennium Prize Problems.
+
+<ul>
+  <li class="fragment"><b>Sketch of the Problem:</b> <br>
+    Prove or give a counter-example that in 3-D, solutions to the incompressible Navier-Stokes equations always exist and are smooth for all time. <br>
+    <a href="https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf">Fefferman (2022)</a>
+  </li><br>
+  <li class="fragment"><b>Prize:</b> <br>
+    $1,000,000 for a correct solution.
+  </li>
+</ul>
+
+
+
+
+
+---
+
+<!-- Slide  -->
+
+<style>
+.equation-box {
+  border: 2px solid #001d7bff;
+  background: #eaf3fb;
+  border-radius: 12px;
+  min-width: 320px;
+  max-width: 700px;
+  margin: 0.5em auto;
+  padding: 1em 1.5em;
+  text-align: left;
+  font-size: .5em;
+  box-shadow: 0 2px 8px #0001;
+}
+.equation-arrow {
+  text-align: center;
+  margin: 0.2em 0 0.2em 2em;
+  color: #d35400;
+  font-size: .5em;
+}
+</style>
+
+<div class="equation-box">
+  <b>Compressible Navier-Stokes Equations</b>
+  $$
+  \begin{gathered}
+    \frac{\partial\rho}{\partial t} + \nabla\cdot(\rho U) = 0 \\
+    \frac{\partial(\rho U)}{\partial t} + \nabla\cdot(\rho UU) = \nabla\cdot\left(\mu(\nabla U+(\nabla U)^\mathrm{T})-\frac{2}{3} \mu(\nabla\cdot U)I_3\right) - \nabla p+\rho g
+  \end{gathered}
+  $$
+</div>
+<div class="equation-arrow">
+  &darr; &nbsp; <i>&rho; is constant (incompressible flow)</i>
+</div>
+<div class="equation-box" style="max-width:600px;">
+  <b>Incompressible Navier-Stokes Equations</b>
+  $$
+  \begin{gathered}
+    \nabla\cdot U=0\\
+    \frac{\partial U}{\partial t}+\nabla\cdot(UU)=\nu\nabla^2 U-\frac{1}{\rho} \nabla p+g
+  \end{gathered}
+  $$
+</div>
+<div class="equation-arrow">
+  &darr; &nbsp; <i>&mu; = 0 (inviscid flow)</i>
+</div>
+<div class="equation-box" style="max-width:480px;">
+  <b>Euler Equations</b>
+  $$
+  \begin{gathered}
+    \nabla\cdot U=0\\
+    \frac{\partial U}{\partial t} + \nabla\cdot(UU)= -\frac{1}{\rho} \nabla p+g
+  \end{gathered}
+  $$
+</div>
+<div class="equation-arrow">
+  &darr; &nbsp; <i>&nabla; &times;U = 0 (irrotational flow)</i>
+</div>
+<div class="equation-box" style="max-width:320px;">
+  <b>Laplace's Equation</b>
+  $$
+  \nabla^2 \varphi =0
+  $$
+</div>
+
+---
+
+<style>
+.equation-box {
+  border: 2px solid #001d7bff;
+  background: #eaf3fb;
+  border-radius: 12px;
+  min-width: 320px;
+  max-width: 700px;
+  margin: 0.5em auto;
+  padding: 1em 1.5em;
+  text-align: left;
+  font-size: .5em;
+  box-shadow: 0 2px 8px #0001;
+}
+.equation-arrow {
+  text-align: center;
+  margin: 0.2em 0 0.2em 2em;
+  color: #d35400;
+  font-size: .5em;
+}
+/* Highlight for the second box */
+.equation-box.highlight {
+  border: 3px solid #d35400;
+  background: #ffe5cc;
+  box-shadow: 0 0 16px #d3540040;
+}
+</style>
+
+<div class="equation-box">
+  <b>Compressible Navier-Stokes Equations</b>
+  $$
+  \begin{gathered}
+    \frac{\partial\rho}{\partial t} + \nabla\cdot(\rho U) = 0 \\
+    \frac{\partial(\rho U)}{\partial t} + \nabla\cdot(\rho UU) = \nabla\cdot\left(\mu(\nabla U+(\nabla U)^\mathrm{T})-\frac{2}{3} \mu(\nabla\cdot U)I_3\right) - \nabla p+\rho g
+  \end{gathered}
+  $$
+</div>
+<div class="equation-arrow">
+  &darr; &nbsp; <i>&rho; is constant (incompressible flow)</i>
+</div>
+<div class="equation-box highlight" style="max-width:600px;">
+  <b>Incompressible Navier-Stokes Equations</b>
+  $$
+  \begin{gathered}
+    \nabla\cdot U=0\\
+    \frac{\partial U}{\partial t}+\nabla\cdot(UU)=\nu\nabla^2 U-\frac{1}{\rho} \nabla p+g
+  \end{gathered}
+  $$
+</div>
+<div class="equation-arrow">
+  &darr; &nbsp; <i>&mu; = 0 (inviscid flow)</i>
+</div>
+<div class="equation-box" style="max-width:480px;">
+  <b>Euler Equations</b>
+  $$
+  \begin{gathered}
+    \nabla\cdot U=0\\
+    \frac{\partial U}{\partial t} + \nabla\cdot(UU)= -\frac{1}{\rho} \nabla p+g
+  \end{gathered}
+  $$
+</div>
+<div class="equation-arrow">
+  &darr; &nbsp; <i>&nabla; &times;U = 0 (irrotational flow)</i>
+</div>
+<div class="equation-box" style="max-width:320px;">
+  <b>Laplace's Equation</b>
+  $$
+  \nabla^2 \varphi =0
+  $$
+</div>
 
 ---
 
