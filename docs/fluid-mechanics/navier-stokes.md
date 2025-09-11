@@ -68,10 +68,36 @@ Aeroplane, Wind turbine, Weather forecast, Indoor heat exchange, Room
     </ul>
   </li>
 </ul>
-<span class="fragment" style="font-size:0.75em; color: #555; display: block; text-align: center;">Flow over stalled airfoil</span>
+<span class="fragment" style="font-size:0.75em; color: #555; display: block; text-align: center;
+
 <span class="fragment" style="display: block; text-align: center;">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/-1h9frhwVEI?autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <p> Flow over stalled airfoil</span> </p>
+  <iframe width="560" height="315" data-src="https://www.youtube.com/embed/-1h9frhwVEI?autoplay=1&mute=1" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </span>
+
+<script>
+  // Helper: Reset iframe source to restart video
+  function restartVideo(iframe) {
+    const src = iframe.getAttribute('data-src');
+    iframe.src = '';           // unload
+    setTimeout(() => {         // ensure browser re-requests
+      iframe.src = src;
+    }, 50);
+  }
+
+  // Trigger when a fragment is shown
+  Reveal.on('fragmentshown', event => {
+    const iframe = event.fragment.querySelector('iframe');
+    if (iframe) restartVideo(iframe);
+  });
+
+  // Optional: Also restart if you revisit the slide
+  Reveal.on('slidechanged', event => {
+    event.currentSlide.querySelectorAll('.fragment iframe').forEach(iframe => {
+      iframe.src = ''; // clear on slide enter
+    });
+  });
+</script>
 <ul>
   <li class="fragment">Note: Incompressibility is still a very accurate assumption used in most engineering applications</li>
 </ul>
