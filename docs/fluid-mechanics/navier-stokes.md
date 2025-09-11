@@ -33,8 +33,9 @@ h1, h2, h3, h4, h5, h6 {
   <li class="fragment">Popularly: Very general set of equations describing almost any flow of fluids
   <li class="fragment">Vast span of applications 
 </ul>
+<img src="../img/NSEexamples2.png" class="r-stretch" />
 
-Aeroplane, Wind turbine, Weather forecast, Indoor heat exchange, Room 
+Aeroplanes, Wind turbine, Weather forecast, Indoor heat exchange, Room 
 
 ---
 <!-- Slide 3 -->
