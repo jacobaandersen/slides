@@ -148,6 +148,7 @@ We need something much easier to work with - to do large parameters sweeps and t
 Turns out NSE combined with modern computer power
 Very detailed information of very virtually every enginrrtinh flow problems
 Numerical models allows for detailed analysis of virtually all flows of engineering interest
+AND this is often needed in order to establish more readilu design frameworks and when investigating novel designs
 
 ---
 
@@ -158,6 +159,28 @@ Examples of Engineering Applications based on Navier-Stokes solvers (CFD)
 <!-- In order to do so we must first fully understand governing physics of cases
 Given their generality AND accuracy (if treated correct)
 The importance of fluid flows for engineering as a broad -->
+
+---
+## Learning Goals 
+
+<p class="fragment"><em>Knowledge</em></p>
+<ul>
+  <li class="fragment">Must have knowledge about <span class="fragment highlight-current-blue">stresses in fluids</span>, <span class="fragment highlight-current-blue">equation of motion</span>, <span class="fragment highlight-current-blue">constitutive models</span> and <span class="fragment highlight-current-blue">Navier-Stokes equations</span>.
+  </li>
+</ul>
+
+<p class="fragment"><em>Skills</em></p>
+<ul>
+    <li class="fragment">Must be able to describe <span class="fragment highlight-current-blue">assumptions and limitations</span> of mathematical models for different types of flows.<br>
+  <li class="fragment">Must be able to apply <span class="fragment highlight-current-blue">analytical and semi-empirical methods</span> for mathematical description of fluid dynamic problems.
+</ul>
+
+---
+
+Within the realm of differential analysis (as in Lecture 3) 
+Infinitesimal control volumes (as opposed to finite control volume)
+Detailed information on flow field
+
 
 ---
 
