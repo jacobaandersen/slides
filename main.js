@@ -20,7 +20,7 @@ Reveal.initialize({
     transition: 'fade', // none/fade/slide/convex/concave/zoom
     backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
     transitionSpeed: 'default', // default/fast/slow
-    plugins: [Markdown, Highlight, Math.KaTeX, Notes, Search, Zoom, RevealChalkboard, RevealCustomControls],
+    plugins: [Markdown, Highlight, Math.KaTeX, Notes, Search, Zoom],
     history: true,
     pdfSeparateFragments: false,
     fragments: true,
@@ -37,16 +37,5 @@ Reveal.initialize({
         
         ],
         ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-    },
-  	chalkboard: { 
-		src: null,
-		readOnly: undefined, 
-		toggleNotesButton: { left: "30px", bottom: "30px", top: "auto", right: "auto" },
-		transition: 800,
-		theme: "whiteboard",
-		// configuration options for notes canvas and chalkboard
-		color: [ 'rgba(0,0,255,1)', 'rgba(255,255,255,0.5)' ],
-		background: [ 'rgba(255, 255, 255, 0)' , 'reveal.js-plugins/chalkboard/img/blackboard.png' ],
-		pen:  [ 'url(reveal.js-plugins/chalkboard/img/boardmarker.png), auto', 'url(reveal.js-plugins/chalkboard/img/chalk.png), auto' ],
-	},
+    }
 });
