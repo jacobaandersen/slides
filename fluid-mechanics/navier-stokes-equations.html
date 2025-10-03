@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Jacob Andersen">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../../custom/theme/haervig.css">
+  <link rel="stylesheet" href="../../custom/plugins/highlight/haervig.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <!-- Back to Slidedecks link -->
+    <div style="position: fixed; bottom: 20px; left: 30px; z-index: 1000;">
+      <h2><a href="../" style="color: #222; text-decoration: none; font-size: 0.8em;">←</a></h3>
+    </div>
+
+    <div class="slides">
+
+      <section>
+        <h3 style="margin-bottom: 0;"><b>Fluid Mechanics Course</b></h3>
+        <h2 style="margin-top: 0;">The Navier-Stokes Equations</h2>
+        <h3 style="margin-top: 40px; margin-bottom: 0;"><em>Lecturer: Jacob Andersen</em></h3>
+        <h5 style="margin-top: 0px;"><em>Slides by Asst. Prof. Jacob Andersen (AAU BUILD) and Assoc. Prof. Jakob Hærvig
+            (AAU ENERGY)</em></h5>
+      </section>
+
+      <section>
+         <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+          <h1 style="text-align: center; width: 100%;">Introduction to the Navier-Stokes Equations</h1>
+        </div>
+      </section>
+
+      <section>
+        <h2><b>Any experience with the Navier-Stokes Equations?</b></h2>
+      </section>
+
+      <section>
+        <h2> What are they? </h2>
+        <div class="container">
+          <div class="col">
+            <p class="fragment">Popularly: Very general set of equations describing almost any flow of fluids</p>
+            <ul>
+              <li class="fragment">Vast span of applications
+              </li>
+              <img class="fragment" src="img/NSEexamples2.png" width="800" />
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>What makes them special?</h2>
+        <div class="container">
+          <div class="col">
+            <ul>
+              <li class="fragment">Recall: Potential flow theory
+                <ul>
+                  <li class="fragment fade-in">
+                    <span class="fragment semi-fade-out">Inviscid, irrotational, incompressible flow</span>
+                  </li>
+                </ul>
+              </li>
+              <li class="fragment">The most general form of the Navier-Stokes equations
+                <ul>
+                  <li class="fragment fade-in">
+                    <span class="fragment highlight-blue">Viscid, rotational, compressible flow</span>
+                  </li>
+                  <li class="fragment">Huge impact on the complexity of the flow <span
+                      class="fragment highlight-blue">&rarr;
+                      Turbulence</span></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="fragment" style="font-size:0.75em; color: #555; text-align: center;">
+              <p>Flow over stalled airfoil</p>
+              <iframe width="560" height="315" data-src="https://www.youtube.com/embed/-1h9frhwVEI?autoplay=1&mute=1"
+                src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <ul>
+              <li class="fragment">Note: Incompressibility is still a very accurate assumption used in most engineering
+                applications</li>
+            </ul>
+
+          </div>
+        </div>
+        <script>
+          // Helper: Reset iframe source to restart video
+          function restartVideo(iframe) {
+            const src = iframe.getAttribute('data-src');
+            iframe.src = '';
+            setTimeout(() => {
+              iframe.src = src;
+            }, 50);
+          }
+
+          // Trigger when a fragment is shown
+          Reveal.on('fragmentshown', event => {
+            const iframe = event.fragment.querySelector('iframe');
+            if (iframe) restartVideo(iframe);
+          });
+
+          // Optional: Also restart if you revisit the slide
+          Reveal.on('slidechanged', event => {
+            event.currentSlide.querySelectorAll('.fragment iframe').forEach(iframe => {
+              iframe.src = '';
+            });
+          });
+        </script>
+      </section>
+
+      <section>
+        <h2> Richard Feynman on Turbulence </h2>
+        <div class="container">
+          <div class="col">
+            <blockquote class="fragment">
+              Turbulence is the most important unsolved problem of classical physics<br>
+              <a href="https://royalsocietypublishing.org/doi/10.1098/rsta.2010.0332" target="_blank">Eames &amp; Flor
+                (2011)</a>
+            </blockquote>
+            <blockquote class="fragment">
+              There is a physical problem that is common to many fields, that is very old, and that has not been solved.
+              It is not the problem of finding new fundamental particles, but something left over from a long time
+              ago—over a hundred years. Nobody in physics has really been able to analyze it mathematically
+              satisfactorily in spite of its importance to the sister sciences. It is the analysis of circulating or
+              turbulent fluids.<br>
+              <a href="https://www.goodreads.com/book/show/17278.The_Feynman_Lectures_on_Physics_Vol_1"
+                target="_blank">Feynman et al. (1965)</a>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7 -->
+      <section>
+        <h2>A Millennium Problem</h2>
+        <div class="container">
+          <div class="col">
+            <p>The Clay Mathematics Institute has identified the existence and smoothness of solutions to the
+              Navier-Stokes equations as one of the seven Millennium Prize Problems.</p>
+
+            <ul>
+              <li class="fragment">
+                <b>Sketch of the Problem</b><br>
+                Prove or give a counter-example that in 3-D, solutions to the incompressible Navier-Stokes equations
+                always exist and are smooth for all time.<br>
+                <a href="https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf">Fefferman (2022)</a>
+              </li>
+              <br>
+              <li class="fragment">
+                <b>Prize</b><br>
+                $1,000,000 for a correct solution.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 8 -->
+      <section>
+        <h2>We Are Engineers - Why This Lecture?</h2>
+        <div class="container">
+          <div class="col">
+            <p class="fragment">The Navier-Stokes equations describes some very <em>complex physics not fully
+                  understood</em> and their <em>mathematical properties are still being investigated</em> by mathematicians </p>
+            <ul>
+              <li class="fragment">This is a course for <em>engineering programmes</em>
+                <ul>
+                  <li class="fragment">We need to able to reach results and within a reasonable time frame</li>
+                  <li class="fragment">So, why this lecture?</li>
+                </ul>
+              </li>
+              <li class="fragment">Combined with modern computer power the Navier-Stokes equations
+                <ul>
+                  <li class="fragment">Allows for <span class="fragment highlight-current-blue">detailed analysis</span>
+                    of virtually all flows of <span class="fragment highlight-current-blue">engineering interest</span>
+                  </li>
+                  <li class="fragment">Are great for investigation of <span
+                      class="fragment highlight-current-blue">novel concepts</span> &mdash; given their generality</li>
+                  <li class="fragment">Are often the <span class="fragment highlight-current-blue">basis of
+                      faster</span>, more simple design frameworks</li>
+                </ul>
+              </li>
+              <li class="fragment">Understanding the <em>underlying physics</em> of the Navier-Stokes equations is <em>key
+                  to applying them meaningfully</em></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 9 -->
+      <section>
+        <h2>Engineering Applications</h2>
+        <div class="container">
+          <div class="col">
+            <p>Examples of Engineering Applications based on Navier-Stokes solvers (CFD):</p>
+
+            <!-- Video player -->
+            <div style="margin: 2em auto; max-width: 739px; text-align: center;">
+              <iframe name="nse-player" width="739" height="416"
+                data-src="https://www.youtube.com/embed/EvSDFRfJToQ?autoplay=1&mute=1" src=""
+                allow="autoplay;encrypted-media" allowfullscreen></iframe>
+            </div>
+
+            <!-- Video gallery -->
+            <div style="display: flex; flex-wrap: wrap; gap: 2em; justify-content: center; align-items: flex-start;">
+              <div style="width: 320px; text-align: center;">
+                <a href="https://www.youtube.com/embed/EvSDFRfJToQ?autoplay=1&mute=1" target="nse-player">
+                  <img src="https://img.youtube.com/vi/EvSDFRfJToQ/0.jpg" alt="Airflow in a Room"
+                    style="width:100%; border-radius:8px;">
+                  <div style="margin-top:0.5em;">Promenade flooding</div>
+                </a>
+              </div>
+
+              <div style="width: 320px; text-align: center;">
+                <a href="https://www.youtube.com/embed/qEtcCjln-0Q?start=140&autoplay=1&mute=1" target="nse-player">
+                  <img src="https://img.youtube.com/vi/qEtcCjln-0Q/0.jpg" alt="Car Aerodynamics"
+                    style="width:100%; border-radius:8px;">
+                  <div style="margin-top:0.5em;">Wakes in wind farm <span style="color:#888;">(starts at 2:20)</span>
+                  </div>
+                </a>
+              </div>
+
+              <div style="width: 320px; text-align: center;">
+                <a href="https://www.youtube.com/embed/0s-dVwlBXqM?autoplay=1&mute=1" target="nse-player">
+                  <img src="https://img.youtube.com/vi/0s-dVwlBXqM/0.jpg" alt="Wind Flow Around Buildings"
+                    style="width:100%; border-radius:8px;">
+                  <div style="margin-top:0.5em;">Air flow in data center</div>
+                </a>
+              </div>
+
+              <div style="width: 320px; text-align: center;">
+                <a href="https://www.youtube.com/embed/y1sSRXFBN7k?start=73&autoplay=1&mute=1" target="nse-player">
+                  <img src="https://img.youtube.com/vi/y1sSRXFBN7k/0.jpg" alt="Turbulence in Water"
+                    style="width:100%; border-radius:8px;">
+                  <div style="margin-top:0.5em;">Wind in urban area <span style="color:#888;">(starts at
+                      1:13)</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Learning Goals Title Slide -->
+      <section>
+        <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+          <h1 style="text-align: center; width: 100%;">Learning Goals</h1>
+        </div>
+      </section>
+
+      <!-- Learning Goals Content -->
+      <section>
+        <h2>Learning Goals</h2>
+        <div class="container">
+          <div class="col">
+            <p><em>Knowledge</em></p>
+            <ul>
+              <li class="fragment">Must have knowledge about <span class="fragment highlight-current-blue">stresses in
+                  fluids</span>, <span class="fragment highlight-current-blue">equation of motion</span>, <span
+                  class="fragment highlight-current-blue">constitutive models</span> and <span
+                  class="fragment highlight-current-blue">Navier-Stokes equations</span>.</li>
+            </ul>
+            <br>
+            <p class="fragment"><em>Skills</em></p>
+            <ul>
+              <li class="fragment">Must be able to describe <span class="fragment highlight-current-blue">assumptions
+                  and limitations</span> of mathematical models for different types of flows.</li>
+              <li class="fragment">Must be able to apply <span class="fragment highlight-current-blue">analytical and
+                  semi-empirical methods</span> for mathematical description of fluid dynamic problems.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script type="module" src="../../main.js"></script>
+</body>
+
+</html>
