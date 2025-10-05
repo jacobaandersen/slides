@@ -28,13 +28,15 @@
             (AAU ENERGY)</em></h5>
       </section>
 
+      <!-- Introduction Section (Vertical) -->
       <section>
-         <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
-          <h1 style="text-align: center; width: 100%;">Introduction to the Navier-Stokes Equations</h1>
-        </div>
-      </section>
+        <section>
+          <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+            <h1 style="text-align: center; width: 100%;">Introduction to the Navier-Stokes Equations</h1>
+          </div>
+        </section>
 
-      <section>
+        <section>
         <h2><b>Any experience with the Navier-Stokes Equations?</b></h2>
       </section>
 
@@ -244,7 +246,10 @@
           </div>
         </div>
       </section>
+    </section>
 
+    <!-- Learning Goals Section -->
+    <section>
       <!-- Learning Goals Title Slide -->
       <section>
         <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
@@ -277,6 +282,10 @@
       </section>
 
       <!-- Differential Analysis Title Slide -->
+    </section>
+
+    <!-- Differential Analysis Section -->
+    <section>
       <section>
         <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
           <h1 style="text-align: center; width: 100%;">Differential Analysis</h1>
@@ -302,6 +311,10 @@
         </div>
       </section>
 
+    </section>
+
+    <!-- Fluid Element Kinematics Section -->
+    <section>
       <!-- Fluid Element Kinematics Title Slide -->
       <section>
         <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
@@ -366,12 +379,12 @@
           <div style="flex: 0 0 40%;">
             <div style="position: relative; display: inline-block;">
               <img src="./img/fluidElementGeneral.png" style="width: 100%; height: auto; max-height: 70vh;" />
-              <div class="fragment" style="
+              <div style="
                 position: absolute;
                 top: 22%;
                 left: 44.2%;
                 width: 15%;
-                height: 77%;
+                height: 70%;
                 border: 4px solid var(--haervig-pink-dark);
                 background: rgba(214, 51, 132, 0.1);
                 border-radius: 8px;
@@ -406,12 +419,12 @@
           <div style="flex: 0 0 40%;">
             <div style="position: relative; display: inline-block;">
               <img src="./img/fluidElementGeneral.png" style="width: 100%; height: auto; max-height: 70vh;" />
-              <div class="fragment" style="
+              <div style="
                 position: absolute;
                 top: 22%;
                 left: 62%;
                 width: 15%;
-                height: 77%;
+                height: 70%;
                 border: 4px solid var(--haervig-pink-dark);
                 background: rgba(214, 51, 132, 0.1);
                 border-radius: 8px;
@@ -449,7 +462,7 @@
                 top: 22%;
                 left: 62%;
                 width: 15%;
-                height: 77%;
+                height: 70%;
                 border: 4px solid var(--haervig-pink-dark);
                 background: rgba(214, 51, 132, 0.1);
                 border-radius: 8px;
@@ -486,12 +499,12 @@
           <div style="flex: 0 0 40%;">
             <div style="position: relative; display: inline-block;">
               <img src="./img/fluidElementGeneral.png" style="width: 100%; height: auto; max-height: 70vh;" />
-              <div class="fragment" style="
+              <div style="
                 position: absolute;
                 top: 22%;
                 left: 81.5%;
                 width: 17%;
-                height: 77%;
+                height: 70%;
                 border: 4px solid var(--haervig-pink-dark);
                 background: rgba(214, 51, 132, 0.1);
                 border-radius: 8px;
@@ -522,6 +535,10 @@
         </div>
       </section>
 
+    </section>
+
+    <!-- Continuity Equation Section -->
+    <section>
       <!-- Continuity Equation Title Slide -->
       <section>
         <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
@@ -789,6 +806,10 @@
         </div>
       </section>
 
+    </section>
+
+    <!-- Navier-Stokes Equations Section -->
+    <section>
       <!-- Navier-Stokes Title Slide -->
       <section>
         <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
@@ -821,13 +842,10 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <ul>
-              <li class="fragment">Conservation of <em>linear momentum</em> for a finite CV (application of Reynolds Transport Theorem)
-                <span class="fragment"> $$ \boldsymbol{F} = \frac{D \boldsymbol{P_{sys}}}{D t} = \frac{d}{dt}\int_{CV} \boldsymbol{V} \rho \, dV\llap{--} + \int_{CS} \boldsymbol{V}\rho \boldsymbol{V} \cdot \boldsymbol{\hat{n}} \, dA$$ </span>
-              </li>
+            <p class="fragment">Conservation of <em>linear momentum</em> for a finite CV (application of Reynolds Transport Theorem)
+              <span class="fragment"> $$ \boldsymbol{F} = \frac{D \boldsymbol{P_{sys}}}{D t} = \frac{d}{dt}\int_{CV} \boldsymbol{V} \rho \, dV\llap{--} + \int_{CS} \boldsymbol{V}\rho \boldsymbol{V} \cdot \boldsymbol{\hat{n}} \, dA$$ </span>
               <ul> 
                 <li class="fragment"> Similar methodology as used to derive the continuity equation: Reformulation to an <em>infinitesimal CV</em> </li> 
-              </ul>
             </ul>
           </div>
         </div>
@@ -838,39 +856,34 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <ul>
-              <li>Conservation of <em>linear momentum</em> for a finite CV (application of Reynolds Transport Theorem)
-                <span> 
-                  $$
-                  \boldsymbol{F} = \frac{D \boldsymbol{P_{sys}}}{D t} = 
-                  \textcolor{#cc445b}{\frac{d}{dt}\int_{CV} \boldsymbol{V}\rho \, dV\llap{--}}
-                  +  
-                  \textcolor{#0e8563}{\int_{CS} \boldsymbol{V}\rho \boldsymbol{V} \cdot \boldsymbol{\hat{n}} \, dA}
-                  $$
-                </span>
-              </li>
-              <ul> 
-                <li> Similar methodology as used to derive the continuity equation: Reformulation to an <em>infinitesimal CV</em> </li> 
-              </ul>
-              <span class="fragment">
-                <li>Recall,</li>
-              </span>
-            </ul>
-            <div class="fragment" style="display: flex; flex-direction: column; align-items: center;">
-              <div style="margin-top: 0em;"></div>
-              <img src="./img/fig6-5a.png" style="width: 20%; height: auto;" />
-              <p class="smaller-text" style="text-align: center;">Infinitesimal CV</p>
-            </div>
-
-            <ul>
-              <span class="fragment">
-                <li>Approximation of volume integral for infinitesimal CV,</li>
+            <p>Conservation of <em>linear momentum</em> for a finite CV (application of Reynolds Transport Theorem)
+              <span> $$\boldsymbol{F} = \frac{D \boldsymbol{P_{sys}}}{D t} =
+                \textcolor{#cc445b}{\frac{d}{dt}\int_{CV} \boldsymbol{V}\rho \, dV\llap{--}}
+                +
+                \textcolor{#0e8563}{\int_{CS} \boldsymbol{V}\rho \boldsymbol{V} \cdot \boldsymbol{\hat{n}} \, dA}
                 $$
-                  \textcolor{#cc445b}{\frac{d}{dt}\int_{CV}  \boldsymbol{V} \rho \, dV\llap{--}}
-                   = \frac{\partial}{\partial t} (\rho \boldsymbol{V}) \, \delta x\, \delta y\, \delta z
-                  $$
-              </span>
-            </ul>
+                <ul>
+                  <li> Similar methodology as used to derive the continuity equation: Reformulation to an
+                    <em>infinitesimal CV</em> </li>
+                  <span class="fragment">
+                    <li>Recall,</li>
+                  </span>
+                </ul>
+                <div class="fragment" style="display: flex; flex-direction: column; align-items: center;">
+                  <div style="margin-top: 0em;"></div>
+                  <img src="./img/fig6-5a.png" style="width: 20%; height: auto;" />
+                  <p class="smaller-text" style="text-align: center; color: var(--haervig-blue);">Infinitesimal CV</p>
+                </div>
+      
+                <ul>
+                  <span class="fragment">
+                    <li>Approximation of volume integral for infinitesimal CV,</li>
+                    $$
+                    \textcolor{#cc445b}{\frac{d}{dt}\int_{CV} \boldsymbol{V} \rho \, dV\llap{--}}
+                    = \frac{\partial}{\partial t} (\rho \boldsymbol{V}) \, \delta x\, \delta y\, \delta z
+                    $$
+                  </span>
+                </ul>
           </div>
         </div>
       </section>
@@ -880,40 +893,34 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
+            <p>Conservation of <em>linear momentum</em>
+              $$
+              \boldsymbol{F} = \frac{D \boldsymbol{P_{sys}}}{D t} =
+              \frac{\partial}{\partial t} (\rho \boldsymbol{V}) \, \delta x\, \delta y\, \delta z
+              +
+              \textcolor{#0e8563}{\int_{CS} \boldsymbol{V}\rho \boldsymbol{V} \cdot \boldsymbol{\hat{n}} \, dA}
+              $$
+            </p>
             <ul>
-              <li>Conservation of <em>linear momentum</em>
-                <span> 
-                  $$
-                  \boldsymbol{F} = \frac{D \boldsymbol{P_{sys}}}{D t} = 
-                  \frac{\partial}{\partial t} (\rho \boldsymbol{V})  \, \delta x\, \delta y\, \delta z
-                  +  
-                  \textcolor{#0e8563}{\int_{CS} \boldsymbol{V}\rho \boldsymbol{V} \cdot \boldsymbol{\hat{n}} \, dA}
-                  $$
-                </span>
-              </li>
-              <ul> 
-                <li> Similar methodology as used to derive the continuity equation: Reformulation to an <em>infinitesimal CV</em> </li> 
-              </ul>
-              <span>
-                <li>Recall,</li>
-              </span>
-            </ul>
-            <div style="display: flex; flex-direction: column; align-items: center;">
-              <div style="margin-top: 0em;"></div>
-              <img src="./img/fig6-5a.png" style="width: 20%; height: auto;" />
-              <p class="smaller-text" style="text-align: center;">Infinitesimal CV</p>
-            </div>
-
-            <ul>
+              <li> Similar methodology as used to derive the continuity equation: Reformulation to an <em>infinitesimal
+                  CV</em> </li>
               <span class="fragment">
-                <li>We reuse a result from 3-D mass conservation: Net mass flow rate <span class="fragment"><em>→ net linear momentum flow rate </em> </span>  
-                  $$\text{Mass cons.:} \ \ \textcolor{#0e8563}{\int_{CS} \rho \boldsymbol{V} \cdot \boldsymbol{\hat{n}} \, dA} = \left(\frac{\partial (\rho u)}{\partial x} + \frac{\partial (\rho v)}{\partial y} + \frac{\partial (\rho w)}{\partial z}\right) \, \delta x\, \delta y\, \delta z = \nabla \cdot (\rho \boldsymbol{V}) \, \delta x\, \delta y\, \delta z $$
-                  <span class="fragment">
-                    $$\text{Momentum cons.:} \ \ \textcolor{#0e8563}{\int_{CS} \boldsymbol{V}\rho \boldsymbol{V} \cdot \boldsymbol{\hat{n}} \, dA} = \left(\frac{\partial (\rho u\boldsymbol{V})}{\partial x} + \frac{\partial (\rho v\boldsymbol{V})}{\partial y} + \frac{\partial (\rho w\boldsymbol{V})}{\partial z}\right) \, \delta x\, \delta y\, \delta z = \nabla \cdot (\rho\boldsymbol{V}\boldsymbol{V}) \, \delta x\, \delta y\, \delta z $$
-                  </span>
-                </li>
-              </span>
-            </ul>
+                  <li>We reuse a result from 3-D mass conservation: Net mass flow rate <span class="fragment"><em>→ net linear
+                        momentum flow rate </em> </span>
+                    $$\text{Mass cons.:} \ \ \textcolor{#0e8563}{\int_{CS} \rho \boldsymbol{V} \cdot \boldsymbol{\hat{n}} \,
+                    dA} = \left(\frac{\partial (\rho u)}{\partial x} + \frac{\partial (\rho v)}{\partial y} + \frac{\partial
+                    (\rho w)}{\partial z}\right) \, \delta x\, \delta y\, \delta z = \nabla \cdot (\rho \boldsymbol{V}) \,
+                    \delta x\, \delta y\, \delta z $$
+                    <span class="fragment">
+                      $$\text{Momentum cons.:} \ \ \textcolor{#0e8563}{\int_{CS} \boldsymbol{V}\rho \boldsymbol{V} \cdot
+                      \boldsymbol{\hat{n}} \, dA} = \left(\frac{\partial (\rho u\boldsymbol{V})}{\partial x} + \frac{\partial
+                      (\rho v\boldsymbol{V})}{\partial y} + \frac{\partial (\rho w\boldsymbol{V})}{\partial z}\right) \,
+                      \delta x\, \delta y\, \delta z = \nabla \cdot (\rho\boldsymbol{V}\boldsymbol{V}) \, \delta x\, \delta
+                      y\, \delta z $$
+                    </span>
+                  </li>
+                </span>
+              </ul>
           </div>
         </div>
       </section>
@@ -923,8 +930,7 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <ul>
-              <li>Conservation of <em>linear momentum</em> for infinitesimal CV
+            <p>Conservation of <em>linear momentum</em> for infinitesimal CV
                 <span> 
                   $$
                   \delta \boldsymbol{F} = \frac{\partial}{\partial t} (\rho \boldsymbol{V})  \, \delta x\, \delta y\, \delta z
@@ -932,17 +938,17 @@
                   \nabla \cdot (\rho\boldsymbol{V}\boldsymbol{V}) \, \delta x\, \delta y\, \delta z
                   $$
                   <span class="fragment">
-                    $$ \Downarrow $$
+                    $$ \Updownarrow $$
                     $$ \delta \boldsymbol{F} = \left( \frac{\partial}{\partial t} (\rho \boldsymbol{V}) + \nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V}) \right) \, \delta x\, \delta y\, \delta z $$
                   </span>
                 </span>
-              </li>
+              </p>
+              <ul>
               <li class="fragment">We see that $\nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V})$ is the divergence of an outer product (dyadic product) and can be rewritten</li>
               <span class="fragment"> $$\nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V}) = \rho (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} + \boldsymbol{V} (\nabla \cdot (\rho \boldsymbol{V}))$$ </span>
-              <span class="fragment">
-                $$ \Downarrow $$
+              <li class="fragment"> Insertion and rearrangement
                 $$ \delta \boldsymbol{F} = \left( \rho \left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) + \boldsymbol{V} \left( \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \boldsymbol{V})\right) \right) \, \delta x\, \delta y\, \delta z $$
-              </span>
+              </li>
             </ul>
           </div>
         </div>
@@ -953,30 +959,27 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <ul>
-              <li>Conservation of <em>linear momentum</em> for infinitesimal CV
+            <p>Conservation of <em>linear momentum</em> for infinitesimal CV
                 <span> 
                   $$
                   \delta \boldsymbol{F} = \frac{\partial}{\partial t} (\rho \boldsymbol{V})  \, \delta x\, \delta y\, \delta z
                   +  
                   \nabla \cdot (\rho\boldsymbol{V}\boldsymbol{V}) \, \delta x\, \delta y\, \delta z
                   $$
-                  <span>
-                    $$ \Downarrow $$
-                    $$ \delta \boldsymbol{F} = \left( \frac{\partial}{\partial t} (\rho \boldsymbol{V}) + \nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V}) \right) \, \delta x\, \delta y\, \delta z $$
-                  </span>
+                  $$ \Updownarrow $$
+                  $$ \delta \boldsymbol{F} = \left( \frac{\partial}{\partial t} (\rho \boldsymbol{V}) + \nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V}) \right) \, \delta x\, \delta y\, \delta z $$
                 </span>
-              </li>
+              </p>
+              <ul>
               <li>We see that $\nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V})$ is the divergence of an outer product (dyadic product) and can be rewritten</li>
               <span> $$\nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V}) = \rho (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} + \boldsymbol{V} (\nabla \cdot (\rho \boldsymbol{V}))$$ </span>
-              <span>
-                $$ \Downarrow $$
-                $$ \delta \boldsymbol{F} = \left( \rho \left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) + \cancel{ \boldsymbol{V} \left( \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \boldsymbol{V})\right) } \right) \, \delta x\, \delta y\, \delta z $$
-              </span>
-              <li>Applying the <em>(compressible) continuity equation</em> and the definition of the <em>total derivative</em></li>
+              <li> Insertion and rearrangement
+                $$ \delta \boldsymbol{F} = \left( \rho \left( \textcolor{#cc445b}{\frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V}} \right) + \cancel{ \boldsymbol{V} \left( \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \boldsymbol{V})\right) } \right) \, \delta x\, \delta y\, \delta z $$
+              </li>
+              <li>Applying the definition of the <span style="color: var(--haervig-pink-dark);">material derivative</span> and the <em>(compressible) continuity equation</em></li>
               <span> $$ \delta \boldsymbol{F} = \rho \left( \frac{D \boldsymbol{V}}{D t}  \right) \, \delta x\, \delta y\, \delta z $$</span>
               <span class="fragment">
-                <li>The conservation of linear momentum for an infinitesimal CV results in a differential form of Newton's 2nd law </li>
+                <li>Conservation of linear momentum on infinitesimal CV $\rightarrow$ differential form of Newton's 2nd law </li>
                 $$ \delta \boldsymbol{F} = \delta m \ \boldsymbol{a} $$
               </span>
             </ul>
@@ -989,86 +992,63 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <ul>
-              <li class="fragment">Next step: Describe the forces $\delta \boldsymbol{F}$ acting on the infinitesimal CV</li>
+            <p>Next step: Describe the forces $\delta \boldsymbol{F}$ acting on the infinitesimal CV</p>
               <ul>
-                <span class="fragment">
-                  <li>Combination of body forces (e.g., gravity) and surface forces (e.g. pressure, viscous stresses)</li>
+                  <li class="fragment">Combination of body forces (e.g., gravity) and surface forces <br> (e.g. pressure, viscous stresses)
                   $$ \delta \boldsymbol{F} = \textcolor{#cc445b}{\delta \boldsymbol{F_{b}}} + \textcolor{#0e8563}{\delta \boldsymbol{F_{s}}} $$
-                </span>
+                </li>
+                <li class="fragment">Body force due to gravity (3-D): $$ \textcolor{#cc445b}{\delta \boldsymbol{F_{b}}} = \delta m \ \boldsymbol{g} $$</li>
               </ul>
-              <span class="fragment">
-                <li>Body force due to gravity (3-D): $$ \textcolor{#cc445b}{\delta \boldsymbol{F_{b}}} = \delta m \ \boldsymbol{g} $$</li>
-              </span>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- Surface forces -->
+      <!-- Surface forces and Cauchy stress tensor -->
       <section>
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
+            <p>Next step: Describe the forces $\delta \boldsymbol{F}$ acting on the infinitesimal CV</p>
             <ul>
-              <li>Next step: Describe the forces $\delta \boldsymbol{F}$ acting on the infinitesimal CV</li>
-              <ul>
-                <li>Combination of body forces (e.g., gravity) and surface forces (e.g. pressure, viscous stresses)</li>
-                $$ \delta \boldsymbol{F} = \delta m \ \boldsymbol{g} + \textcolor{#0e8563}{\delta \boldsymbol{F_{s}}} $$
-              </ul>
-              <li class="fragment">Surface force: A combination of normal and shear stresses</li>
+              <li>Combination of body forces (e.g., gravity) and surface forces <br> (e.g. pressure, viscous stresses)
+                $$ \delta \boldsymbol{F} =  \delta m \ \boldsymbol{g} + \textcolor{#0e8563}{\delta
+                \boldsymbol{F_{s}}} $$
+              </li>
+              <li class="fragment" data-fragment-index="1">Surface force: A combination of normal and shear stresses</li>
               <ul>
                 <li class="fragment">Stress expected to vary in flow field</li>
-                <li class="fragment">First order Taylor series expansion on stress state (incl. gradients) in centroid </li>
-                <span class="fragment">
-                  <div style="display: flex; flex-direction: column; align-items: center;">
-                    <div style="margin-top: 0em;"></div>
-                    <img src="./img/fig6-11.png" style="width: 40%; height: auto;" />
-                    <p class="smaller-text" style="text-align: center;">Infinitesimal CV with surfaces forces acting in $x$</p>
-                  </div>
-                </span>
+                <li class="fragment">First order Taylor series expansion on stress state <br> (incl. gradients) in centroid
+                </li>
                 <span class="fragment">
                   <li>Net surface force in $x$ direction</li>
-                  $$ \delta \boldsymbol{F_{sx}} = \left( \frac{\partial \sigma_{xx}}{\partial x} + \frac{\partial \tau_{yx}}{\partial y} + \frac{\partial \tau_{zx}}{\partial z} \right) \ \delta x\ \delta y\ \delta z $$
+                  $$ \delta \boldsymbol{F_{sx}} = \left( \frac{\partial \sigma_{xx}}{\partial x} + \frac{\partial
+                  \tau_{yx}}{\partial y} + \frac{\partial \tau_{zx}}{\partial z} \right) \ \delta x\ \delta y\ \delta z $$
                 </span>
+                <li class="fragment"> Similarly for $y$ and $z$ directions </li>
+                <li class="fragment"> Introducing Cauchy's stress tensor $\boldsymbol{\sigma}$
+                  $$ \boldsymbol{\sigma} = \begin{bmatrix}
+                  \sigma_{xx} & \tau_{xy} & \tau_{xz} \\
+                  \tau_{yx} & \sigma_{yy} & \tau_{yz} \\
+                  \tau_{zx} & \tau_{zy} & \sigma_{zz}
+                  \end{bmatrix} $$
+                </li>
+                <li class="fragment"> The net surface force vector can be expressed as
+                  $$ \textcolor{#0e8563}{\delta \boldsymbol{F_{s}}}= \left( \nabla \cdot \boldsymbol{\sigma} \right) \, \delta
+                  x\, \delta y\, \delta z $$
+                </li>
               </ul>
             </ul>
           </div>
-        </div>
-      </section>
-
-      <!-- Cauchy stress tensor -->
-      <section>
-        <h2>Derivation of the Navier-Stokes Equations</h2>
-        <div class="container">
-          <div class="col">
-            <ul>
-              <li>Next step: Describe the forces $\delta \boldsymbol{F}$ acting on the infinitesimal CV</li>
-              <ul>
-                <li>Combination of body forces (e.g., gravity) and surface forces (e.g. pressure, viscous stresses)</li>
-                $$ \delta \boldsymbol{F} = \delta m \ \boldsymbol{g} + \textcolor{#0e8563}{\delta \boldsymbol{F_{s}}} $$
-              </ul>
-              <li>Surface force: A combination of normal and shear stresses</li>
-              <ul>
-                <li>Stress expected to vary in flow field</li>
-                <li>First order Taylor series expansion on stress state (incl. gradients) in centroid </li>
-                <li>Net surface force in $x$ direction</li>
-                $$ \delta \boldsymbol{F_{sx}} = \left( \frac{\partial \sigma_{xx}}{\partial x} + \frac{\partial \tau_{yx}}{\partial y} + \frac{\partial \tau_{zx}}{\partial z} \right) \ \delta x\ \delta y\ \delta z $$
-                <li class="fragment"> Similarly for $y$ and $z$ directions </li>
-                <span class="fragment">
-                  <li> Introducing Cauchy's stress tensor $\boldsymbol{\sigma}$ </li>
-                  $$ \boldsymbol{\sigma} = \begin{bmatrix}
-                    \sigma_{xx} & \tau_{xy} & \tau_{xz} \\
-                    \tau_{yx} & \sigma_{yy} & \tau_{yz} \\
-                    \tau_{zx} & \tau_{zy} & \sigma_{zz}
-                    \end{bmatrix} $$
-                </span>
-                <span class="fragment">
-                  <li> The net surface force vector can be expressed as</li>
-                  $$ \textcolor{#0e8563}{\delta \boldsymbol{F_{s}}}= \left( \nabla \cdot \boldsymbol{\sigma} \right) \, \delta x\, \delta y\, \delta z $$ 
-                </span>
-              </ul>
-            </ul>
+          <div class="col" <´>
+            <span class="fragment" data-fragment-index="2">
+              <div style="display: flex; flex-direction: column; align-items: center;">
+                <div style="margin-top: 0em;"></div>
+                <img src="./img/fig6-11.png" style="width: 80%; height: auto;" />
+                <p class="smaller-text" style="text-align: center; color: var(--haervig-blue);">Infinitesimal CV with surfaces
+                  forces acting in $x$</p>
+              </div>
+            </span>
           </div>
         </div>
       </section>
@@ -1078,21 +1058,20 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <ul>
-              <li>Description of the net force $\delta \boldsymbol{F}$ acting on the infinitesimal CV</li>
+            <p>Description of the net force $\delta \boldsymbol{F}$ acting on the infinitesimal CV</p>
               <ul>
-                <li>Combination of body forces (e.g., gravity) and surface forces (e.g. pressure, viscous stresses)</li>
+                <li>Combination of body forces (e.g., gravity) and surface forces <br> (e.g. pressure, viscous stresses)
                 $$ \delta \boldsymbol{F} = \delta m \ \boldsymbol{g} + ( \nabla \cdot \boldsymbol{\sigma} ) \, \delta x\, \delta y\, \delta z $$
+                </li>
                 <span class="fragment">
-                  $$ \Downarrow $$
+                  $$ \Updownarrow $$
                   $$ \ \delta \boldsymbol{F} = ( \rho \ \boldsymbol{g} + ( \nabla \cdot \boldsymbol{\sigma} )) \, \delta x\, \delta y\, \delta z $$
                 </span>
-              </ul>
               <li class="fragment">We recall
                 $$ \delta \boldsymbol{F} = \delta m \ \boldsymbol{a} $$
                 <span class="fragment">
                   $$ \Downarrow $$
-                  $$ ( \rho \ \boldsymbol{g} + ( \nabla \cdot \boldsymbol{\sigma} )) \, \delta x\, \delta y\, \delta z = \rho \left( \frac{D \boldsymbol{V}}{D t}  \right) \, \delta x\, \delta y\, \delta z $$
+                  $$ ( \rho \ \boldsymbol{g} + ( \nabla \cdot \boldsymbol{\sigma} )) \, \delta x\, \delta y\, \delta z = \rho \left( \frac{D \boldsymbol{V}}{D t}  \right)\, \delta x\, \delta y\, \delta z $$
                 </span>
               </li>
             </ul>
@@ -1105,16 +1084,15 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <ul>
-              <li>Description of the net force $\delta \boldsymbol{F}$ acting on the infinitesimal CV</li>
+            <p>Description of the net force $\delta \boldsymbol{F}$ acting on the infinitesimal CV</p>
               <ul>
-                <li>Combination of body forces (e.g., gravity) and surface forces (e.g. pressure, viscous stresses)</li>
+                <li>Combination of body forces (e.g., gravity) and surface forces <br> (e.g. pressure, viscous stresses)
                 $$ \delta \boldsymbol{F} = \delta m \ \boldsymbol{g} + ( \nabla \cdot \boldsymbol{\sigma} ) \, \delta x\, \delta y\, \delta z $$
+                </li>
                 <span>
-                  $$ \Downarrow $$
+                  $$ \Updownarrow $$
                   $$ \ \delta \boldsymbol{F} = ( \rho \ \boldsymbol{g} + ( \nabla \cdot \boldsymbol{\sigma} )) \, \delta x\, \delta y\, \delta z $$
                 </span>
-              </ul>
               <li>We recall
                 $$ \delta \boldsymbol{F} = \delta m \ \boldsymbol{a} $$
                 <span>
@@ -1122,7 +1100,7 @@
                   $$ ( \rho \ \boldsymbol{g} + ( \nabla \cdot \boldsymbol{\sigma} )) \, \cancel{\delta x\, \delta y\, \delta z} = \rho \left( \frac{D \boldsymbol{V}}{D t}  \right) \, \cancel{\delta x\, \delta y\, \delta z} $$
                 </span>
               </li>
-              <li>The general differential <em>equations of fluid motion</em> (Cauchy momentum equation) results
+              <li>The general differential <em>equations of fluid motion</em>, <br> or the Cauchy momentum equation, results
                 $$ \rho \ \boldsymbol{g} + ( \nabla \cdot \boldsymbol{\sigma} ) = \rho \left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) $$
               </li>
             </ul>
@@ -1135,10 +1113,9 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <ul>
-              <li>The general differential <em>equations of fluid motion</em> (Cauchy momentum equation):
+            <p><b>Key result:</b> The general differential <em>equations of fluid motion</em> (Cauchy momentum equation):
                 $$ \rho \ \boldsymbol{g} + ( \nabla \cdot \boldsymbol{\sigma} ) = \rho \left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) $$
-              </li>
+            </p>
               <ul>
                 <li class="fragment">Resemblance to $\delta \boldsymbol{F} = \delta m \ \boldsymbol{a}$ </li>
                 <span class="fragment"> 
@@ -1148,9 +1125,8 @@
                     $$ \rho g_z + \frac{\partial \tau_{xz}}{\partial x} + \frac{\partial \tau_{yz}}{\partial y} + \frac{\partial \sigma_{zz}}{\partial z} = \rho \left( \frac{\partial w}{\partial t} + u\frac{\partial w}{\partial x} + v\frac{\partial w}{\partial y} + w\frac{\partial w}{\partial z} \right) $$
                   </li>
                 </span>
-              </ul>
-              <li class="fragment">Can we solve the flow field now?</li>
-              <ul>
+                <li class="fragment">Can we solve the flow field now?</li>
+                <ul>
                 <li class="fragment">No, more unknowns (6 stress components, 3 velocity components, pressure and density) than equations <em>→ Ill-posed problem </em></li>
               </ul>
             </ul>
@@ -1163,17 +1139,22 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
+            <p>To close the problem, we need to relate stresses to velocities, i.e., <em>elimate unkowns</em></p>
             <ul>
-              <li class="fragment">To close the problem, we need to relate stresses to velocities</li>
-              <span class="fragment">
-                <li> Revisit the Cauchy stress tensor: Sum of pressure (isotropic) and viscous (deviatoric) stress tensors </li>
-                $$\boldsymbol{\sigma} = -p \boldsymbol{I} + \boldsymbol{\tau} = \begin{bmatrix} -p & 0 & 0 \\ 0 & -p & 0 \\ 0 & 0 & -p \end{bmatrix} + \begin{bmatrix} \tau_{xx} & \tau_{xy} & \tau_{xz} \\ \tau_{yx} & \tau_{yy} & \tau_{yz} \\ \tau_{zx} & \tau_{zy} & \tau_{zz} \end{bmatrix} $$
-              </span>
-              <span class="fragment">
-                <li>Constitutive relation for an incompressible <b>Newtonian fluid</b>: <em>Viscous stresses are linearly proportional to strain rates</em></li>
-                $$\boldsymbol{\tau} = \mu \boldsymbol{S} $$
-                <li style="list-style: none">  with the strain rate tensor </li>
-                $$ \boldsymbol{S} = \left[ \begin{matrix} 2 \dot{\epsilon}_{xx} & \dot{\gamma}_{xy} & \dot{\gamma}_{xz} \\ \dot{\gamma}_{yx} & 2 \dot{\epsilon}_{yy} & \dot{\gamma}_{yz} \\ \dot{\gamma}_{zx} & \dot{\gamma}_{zy} & 2 \dot{\epsilon}_{zz} \end{matrix} \right] $$
+              <li class="fragment"> Revisit the Cauchy stress tensor: Sum of pressure (isotropic) and viscous (deviatoric)
+                stress tensors
+                $$\boldsymbol{\sigma} = -p \boldsymbol{I_3} + \boldsymbol{\tau} = \begin{bmatrix} -p & 0 & 0 \\ 0 & -p & 0 \\ 0
+                & 0 & -p \end{bmatrix} + \begin{bmatrix} \tau_{xx} & \tau_{xy} & \tau_{xz} \\ \tau_{yx} & \tau_{yy} &
+                \tau_{yz} \\ \tau_{zx} & \tau_{zy} & \tau_{zz} \end{bmatrix} $$
+              </li>
+              <li class="fragment">Constitutive relation for an incompressible <b>Newtonian fluid</b>: <em>Viscous stresses
+                  are linearly proportional to strain rates</em>
+                $$\boldsymbol{\tau} = \mu \boldsymbol{S} $$</li>
+              <li class="fragment" style="list-style: none"> with the strain rate tensor
+                $$ \boldsymbol{S} = \left[ \begin{matrix} 2 \dot{\epsilon}_{xx} & \dot{\gamma}_{xy} & \dot{\gamma}_{xz} \\
+                \dot{\gamma}_{yx} & 2 \dot{\epsilon}_{yy} & \dot{\gamma}_{yz} \\ \dot{\gamma}_{zx} & \dot{\gamma}_{zy} & 2
+                \dot{\epsilon}_{zz} \end{matrix} \right] $$
+              </li>
               </span>
               <li class="fragment">Recalling our kinematic relations developed with the fluid element</li>
             </ul>
@@ -1186,21 +1167,33 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
+            <p>To close the problem, we need to relate stresses to velocities, i.e., <em>elimate unkowns</em></p>
             <ul>
-              <li class="fragment highlight-blue">To close the problem, we need to relate stresses to velocities</li>
-              <li> Revisit the Cauchy stress tensor: Sum of pressure (isotropic) and viscous (deviatoric) stress tensors </li>
-              $$\boldsymbol{\sigma} = -p \boldsymbol{I} + \boldsymbol{\tau} = \begin{bmatrix} -p & 0 & 0 \\ 0 & -p & 0 \\ 0 & 0 & -p \end{bmatrix} + \begin{bmatrix} \tau_{xx} & \tau_{xy} & \tau_{xz} \\ \tau_{yx} & \tau_{yy} & \tau_{yz} \\ \tau_{zx} & \tau_{zy} & \tau_{zz} \end{bmatrix} $$
-              <span>
-                <li>Constitutive relation for an incompressible <b>Newtonian fluid</b>: <em>Viscous stresses are linearly proportional to strain rates</em></li>
-                $$\boldsymbol{\tau} = \mu \boldsymbol{S} $$
-                <li style="list-style: none">  with the strain rate tensor </li>
-                $$ \boldsymbol{S} = \left[ \begin{matrix} 2 \dot{\epsilon}_{xx} & \dot{\gamma}_{xy} & \dot{\gamma}_{xz} \\ \dot{\gamma}_{yx} & 2 \dot{\epsilon}_{yy} & \dot{\gamma}_{yz} \\ \dot{\gamma}_{zx} & \dot{\gamma}_{zy} & 2 \dot{\epsilon}_{zz} \end{matrix} \right] $$
+              <li> Revisit the Cauchy stress tensor: Sum of pressure (isotropic) and viscous (deviatoric)
+                stress tensors
+                $$\boldsymbol{\sigma} = -p \boldsymbol{I_3} + \boldsymbol{\tau} = \begin{bmatrix} -p & 0 & 0 \\ 0 & -p & 0 \\ 0
+                & 0 & -p \end{bmatrix} + \begin{bmatrix} \tau_{xx} & \tau_{xy} & \tau_{xz} \\ \tau_{yx} & \tau_{yy} &
+                \tau_{yz} \\ \tau_{zx} & \tau_{zy} & \tau_{zz} \end{bmatrix} $$
+              </li>
+              <li>Constitutive relation for an incompressible <b>Newtonian fluid</b>: <em>Viscous stresses
+                  are linearly proportional to strain rates</em>
+                $$\boldsymbol{\tau} = \mu \boldsymbol{S} $$</li>
+              <li style="list-style: none"> with the strain rate tensor </li>
+              $$ \boldsymbol{S} = \left[ \begin{matrix} 2 \dot{\epsilon}_{xx} & \dot{\gamma}_{xy} & \dot{\gamma}_{xz} \\
+              \dot{\gamma}_{yx} & 2 \dot{\epsilon}_{yy} & \dot{\gamma}_{yz} \\ \dot{\gamma}_{zx} & \dot{\gamma}_{zy} & 2
+              \dot{\epsilon}_{zz} \end{matrix} \right] $$
               </span>
               <li>Recalling our kinematic relations developed with the fluid element</li>
               <ul>
                 <span>
                   <li>Strain rates were expressed in terms of velocity gradients</li>
-                  $$ \boldsymbol{S} = \nabla \boldsymbol{V} + (\nabla \boldsymbol{V})^{\mathrm{T}} = \left[ \begin{matrix} 2\frac{\partial u}{\partial x} & \left(\frac{\partial u}{\partial y} + \frac{\partial v}{\partial x}\right) & \ \left(\frac{\partial u}{\partial z} + \frac{\partial w}{\partial x}\right) \\ \left(\frac{\partial v}{\partial x} + \frac{\partial u}{\partial y}\right) & 2\frac{\partial v}{\partial y} & \left(\frac{\partial v}{\partial z} + \frac{\partial w}{\partial y}\right) \\ \left(\frac{\partial w}{\partial x} + \frac{\partial u}{\partial z}\right) & \left(\frac{\partial w}{\partial y} + \frac{\partial v}{\partial z}\right) & 2\frac{\partial w}{\partial z} \end{matrix} \right] $$
+                  $$ \boldsymbol{S} = \nabla \boldsymbol{V} + (\nabla \boldsymbol{V})^{\mathrm{T}} = \left[ \begin{matrix}
+                  2\frac{\partial u}{\partial x} & \left(\frac{\partial u}{\partial y} + \frac{\partial v}{\partial x}\right)
+                  & \ \left(\frac{\partial u}{\partial z} + \frac{\partial w}{\partial x}\right) \\ \left(\frac{\partial
+                  v}{\partial x} + \frac{\partial u}{\partial y}\right) & 2\frac{\partial v}{\partial y} &
+                  \left(\frac{\partial v}{\partial z} + \frac{\partial w}{\partial y}\right) \\ \left(\frac{\partial
+                  w}{\partial x} + \frac{\partial u}{\partial z}\right) & \left(\frac{\partial w}{\partial y} + \frac{\partial
+                  v}{\partial z}\right) & 2\frac{\partial w}{\partial z} \end{matrix} \right] $$
                 </span>
                 <li class="fragment">Sum of diagonal entries is zero (traceless) due to continuity</li>
               </ul>
@@ -1214,27 +1207,25 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <ul>
-              <li>Stress tensor for <em>incompressible Newtonian fluid</em></li>
+            <p>Stress tensor for <em>incompressible Newtonian fluid</em>
               $$
-                \boldsymbol{\sigma} = -p \boldsymbol{I} + \mu (\nabla \boldsymbol{V} + (\nabla \boldsymbol{V})^{\mathrm{T}})
+                \boldsymbol{\sigma} = -p \boldsymbol{I_3} + \mu (\nabla \boldsymbol{V} + (\nabla \boldsymbol{V})^{\mathrm{T}})
               $$
-              <span class="fragment">
-                <li>Substituting into the equations of fluid motion</li>
-                $$ \rho \ \boldsymbol{g} + \nabla \cdot \boldsymbol{\sigma} = \rho \left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) $$
-                $$ \Downarrow $$
-                $$ \rho \ \boldsymbol{g} + \nabla \cdot (-p \boldsymbol{I} + \mu (\nabla \boldsymbol{V} + (\nabla \boldsymbol{V})^{\mathrm{T}})) = \rho \left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) $$
-              </span>
-              <span class="fragment">
-                <li>Using vector calculus identities and the continuity equation</li>
-                $$ \nabla \cdot (p \boldsymbol{I}) = \nabla p $$
+            </p>
+            <p class="fragment">Substituting into the equations of fluid motion
+              $$ \rho \ \boldsymbol{g} + \nabla \cdot \boldsymbol{\sigma} = \rho \left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) $$
+              $$ \Downarrow $$
+              $$ \rho \ \boldsymbol{g} + \nabla \cdot (-p \boldsymbol{I_3} + \mu (\nabla \boldsymbol{V} + (\nabla \boldsymbol{V})^{\mathrm{T}})) = \rho \left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) $$
+            </p>
+              <p class="fragment">Using vector calculus identities and the continuity equation
+                $$ \nabla \cdot (p \boldsymbol{I_3}) = \nabla p $$
                 $$ \nabla \cdot (\nabla \boldsymbol{V}) = \nabla^2 \boldsymbol{V} $$
                 $$ \nabla \cdot ((\nabla \boldsymbol{V})^{\mathrm{T}}) = \nabla(\nabla \cdot \boldsymbol{V}) = 0 \ \ \text{(continuity)} $$
-              </span>
-              <span class="fragment">
-                <li><b>Final form of the incompressible Navier-Stokes equations</b></li>
+              </p>
+              <p class="fragment">
+              <b>Final form of the incompressible Navier-Stokes equations</b>
                 $$ \rho\left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) = -\nabla p + \mu \nabla^2 \boldsymbol{V} + \rho \boldsymbol{g} $$
-              </span>
+              </p>
             </ul>
           </div>
         </div>
@@ -1245,7 +1236,7 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <p class="fragment"><b>Final form of the incompressible Navier-Stokes equations</b>
+            <p><b>Final form of the incompressible Navier-Stokes equations</b>
               $$ \rho\left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) = -\nabla p + \rho \boldsymbol{g} + \mu \nabla^2 \boldsymbol{V} $$</p>
               <span class="fragment">
                 <li style="list-style: none">written out</li>
@@ -1257,7 +1248,7 @@
                 $$
               </span>
             <ul>
-              <li class="fragment">Together with the incompressible continuity equation, we have 4 equations for 4 unknowns ($u,v,w,p$) <em>→ well-posed problem!</em></li>
+              <li class="fragment">Together with the incompressible continuity equation, we have 4 equations for 4 unknowns ($u,v,w,p$) <span class="fragment"><em>→ well-posed problem!</em></span></li>
               <li class="fragment">These are the governing equations of all incompressible Newtonian fluids!</li>
               <li class="fragment">Now let's solve the equations!</li>
             </ul>
@@ -1265,6 +1256,10 @@
         </div>
       </section>
 
+    </section>
+
+    <!-- Solving NSE Section -->
+    <section>
       <!-- Solving NSE Title -->
       <section>
         <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
@@ -1303,6 +1298,10 @@
         </div>
       </section>
 
+    </section>
+
+    <!-- Hierarchy Section -->
+    <section>
       <!-- Hierarchy Title -->
       <section>
         <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
@@ -1320,7 +1319,7 @@
               $$
               \begin{gathered}
                 \frac{\partial\rho}{\partial t} + \nabla\cdot(\rho \boldsymbol{V}) = 0 \\
-                \frac{\partial(\rho \boldsymbol{V})}{\partial t} + \nabla\cdot(\rho \boldsymbol{V}\boldsymbol{V}) = - \nabla p+\rho \boldsymbol{g} +\nabla\cdot\left(\mu(\nabla \boldsymbol{V}+(\nabla \boldsymbol{V})^\mathrm{T})-\frac{2}{3} \mu(\nabla\cdot \boldsymbol{V})I_3\right) 
+                \frac{\partial(\rho \boldsymbol{V})}{\partial t} + \nabla\cdot(\rho \boldsymbol{V}\boldsymbol{V}) = - \nabla p+\rho \boldsymbol{g} +\nabla\cdot\left(\mu(\nabla \boldsymbol{V}+(\nabla \boldsymbol{V})^\mathrm{T})-\frac{2}{3} \mu(\nabla\cdot \boldsymbol{V})\boldsymbol{I_3}\right) 
               \end{gathered}
               $$
             </div>
@@ -1384,7 +1383,7 @@
               $$
               \begin{gathered}
                 \frac{\partial\rho}{\partial t} + \nabla\cdot(\rho \boldsymbol{V}) = 0 \\
-                \frac{\partial(\rho \boldsymbol{V})}{\partial t} + \nabla\cdot(\rho \boldsymbol{V}\boldsymbol{V}) = - \nabla p+\rho \boldsymbol{g} +\nabla\cdot\left(\mu(\nabla \boldsymbol{V}+(\nabla \boldsymbol{V})^\mathrm{T})-\frac{2}{3} \mu(\nabla\cdot \boldsymbol{V})I_3\right) 
+                \frac{\partial(\rho \boldsymbol{V})}{\partial t} + \nabla\cdot(\rho \boldsymbol{V}\boldsymbol{V}) = - \nabla p+\rho \boldsymbol{g} +\nabla\cdot\left(\mu(\nabla \boldsymbol{V}+(\nabla \boldsymbol{V})^\mathrm{T})-\frac{2}{3} \mu(\nabla\cdot \boldsymbol{V})\boldsymbol{I_3}\right) 
               \end{gathered}
               $$
             </div>
@@ -1441,10 +1440,10 @@
                 border-radius: 12px;
                 min-width: 50px;
                 max-width: 900px;
-                margin: 0.5em auto;
+                margin: 0em auto;
                 padding: .5em .5em;
                 text-align: left;
-                font-size: .66em;
+                font-size: .8em;
                 box-shadow: 0 2px 8px #0001;
                 overflow-x: auto;
               }
