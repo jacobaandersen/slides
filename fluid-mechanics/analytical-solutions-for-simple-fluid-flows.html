@@ -35,13 +35,14 @@
                   <li class="fragment">Solution <em>approximated</em> using <em>numerical methods</em> (e.g. CFD)</li>
                   <li class="fragment">Solution found by <em>experiments</em></li>
               </ul>
-              <p class="fragment">Analytical solutions for <em> only a few problems</em></p>
+              <p class="fragment">Analytical solutions for <em> only a few problems</em> where <em>convective accerelation</em> becomes negligible</p>
               <ul>
-                  <li class="fragment"><em>Simple geometries</em>: Flow between two plates or in a tube</em></li>
+                  <li class="fragment"><em>Simple geometries</em>: Flow between two plates or in a tube (internal flows)</em></li>
                   <li class="fragment"><em>Simple flows</em>: Steady, laminar and fully-developed flows</li>
             </div>
 
             <div class="col">
+              <br>
               <em>x-direction:</em>
               $$ 
               \rho \left( \frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} + v \frac{\partial u}{\partial y} + w \frac{\partial u}{\partial z} \right) = -\frac{\partial p}{\partial x} + \mu \left( \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2} \right) + \rho g_x
@@ -69,7 +70,6 @@
               <img class="fragment" data-fragment-index="2" src="img/applications-analytical-solutions3.jpg" width="800"/>
             </div>
             <div class="col">
-              <img class="fragment" data-fragment-index="3" src="img/applications-analytical-solutions4.jpg" width="900"/>
               <img class="fragment" data-fragment-index="4" src="img/applications-analytical-solutions5.jpg" width="900"/>
             </div>
           </div>
@@ -187,11 +187,11 @@ boundaryField
           <h2> Flow between plates</h2>
           <div class="container">
             <div class="col">
-              <p><em>Steady</em>, <em>fully developed</em>, <em>laminar flow</em> between two <em>infinite plates</em></p>
+              <p><em>Incompressible</em>, <em>steady</em>, <em>fully developed</em>, <em>laminar flow</em> between two <em>infinite plates</em></p>
               <ul>
-                  <li class="fragment" data-fragment-index="1">Velocity only in $x$-direction:
+                  <li class="fragment" data-fragment-index="1">Velocity only in $x$-direction and infinite width:
                     <ul>
-                      <li><em>then, </em>$u=u(y)$, $v=w=0$</li>
+                      <li><em>then,</em> $v=w=0$ and $ \partial^2 u/\partial z^2 = 0$</li>
                     </ul>
                   </li>
 
@@ -203,7 +203,7 @@ boundaryField
 
                   <li class="fragment" data-fragment-index="3">By continuity equation: $\partial u/\partial x + \partial v/\partial y + \partial w/\partial z = 0$
                     <ul>
-                      <li><em>then,</em> $\partial u/\partial x=0$</li>
+                      <li><em>then,</em> $\partial u/\partial x=0$ and $u=u(y)$</li>
                     </ul>
                   </li>
 
@@ -239,7 +239,7 @@ boundaryField
                 <span>\( + \)</span>
                 <span">\( \mu \)</span>
                 <span>\( \bigg( \)</span>
-                <span class="fragment semi-fade-out" data-fragment-index="1">\( \dfrac{\partial^2 u}{\partial x^2} \)</span>
+                <span class="fragment semi-fade-out" data-fragment-index="3">\( \dfrac{\partial^2 u}{\partial x^2} \)</span>
                 <span>\( + \)</span>
                 <span>\( \dfrac{\partial^2 u}{\partial y^2} \)</span>
                 <span>\( + \)</span>
@@ -302,7 +302,7 @@ boundaryField
         </section>
 
         <section>
-          <h2> Flow between <em> two stationary</em> plates</h2>
+          <h2> Flow between <em> two stationary</em> plates (aka plane Poiseuille flow) </h2>
           <div class="container">
             <div class="col">
               <p>Integrating twice to get <em>\( u(y)\)</em>:</p>
@@ -386,10 +386,10 @@ boundaryField
             </div>
             <div class="col">
               <img src="img/fig6-32a.jpg" width="600"/>
-
               <img class="fragment" data-fragment-index="5" src="img/fig6-32b.jpg" width="650"/>
-              <p class="singleline-math fragment small-left-padding " data-fragment-index="5">
-                <span>\( P = -\dfrac{b^2}{2\mu U} \left( \dfrac{\partial p}{\partial x} \right) \)</span>
+              <p class="singleline-math fragment small-left-padding" style="color: var(--haervig-blue);" data-fragment-index="5">
+                \( P = -\dfrac{b^2}{2\mu U} \left( \dfrac{\partial p}{\partial x} \right) \)
+              </p>
             </div>
           </div>
         </section>
@@ -398,9 +398,9 @@ boundaryField
           <h2> Flow in a <em>circular pipe</em> (aka Poiseuille flow)</h2>
           <div class="container">
             <div class="col">
-              <p><em>Steady</em>, <em>fully developed</em>, <em>laminar flow</em> in a circular pipe</p>
+              <p><em>Incompressible</em>, <em>steady</em>, <em>fully developed</em>, <em>laminar flow</em> in a circular pipe</p>
               <ul>
-                  <li class="fragment" data-fragment-index="1">Velocity only in $z$-direction:
+                  <li class="fragment" data-fragment-index="1">Velocity only in $z$-direction and axisymmetric flow:
                     <ul>
                       <li><em>then, </em>$v_z = v_z(r)$, $v_\theta=v_r=0$</li>
                     </ul>
@@ -420,14 +420,14 @@ boundaryField
 
                   <li class="fragment" data-fragment-index="4">No gravity in $z$ direction:
                     <ul>
-                      <li><em>then,</em> $g_z 0$</li>
+                      <li><em>then,</em> $g_z = 0$</li>
                     </ul>
                   </li>
               </ul>
 
               <p class="fragment" data-fragment-index="5">Navier-Stokes equations <em>reduce</em> to:</p>
               <p class="singleline-math fragment" data-fragment-index="5">
-                <span><em>$z:~$</em>\( 0 = -\dfrac{\partial p}{\partial z} + \mu \dfrac{1}{r}\dfrac{\partial}{\partial r} \left(r \dfrac{\partial v_z}{\partial r} \right)\)</span>,<span><em>$~~~r:~$</em>\( 0 = \rho g_r - \dfrac{\partial p}{\partial r} \)</span>,<span><em>$~~~\theta:~$</em>\( 0 = \rho g_\theta -\dfrac{\partial p}{\partial \theta}\)</span>
+                <span><em>$z:~$</em>\( 0 = -\dfrac{\partial p}{\partial z} + \mu \dfrac{1}{r}\dfrac{\partial}{\partial r} \left(r \dfrac{\partial v_z}{\partial r} \right)\)</span>,<span><em>$~~~r:~$</em>\( 0 = \rho g_r - \dfrac{\partial p}{\partial r} \)</span>,<span><em>$~~~\theta:~$</em>\( 0 = \rho g_\theta - \dfrac{1}{r} \dfrac{\partial p}{\partial \theta}\)</span>
               </p>
 
               <p class="fragment" data-fragment-index="6" ><em>Integration</em>, applying<em> boundary condtions</em> and <em>find $C_1$</em> and <em>$C_2$</em>:</p>
@@ -480,7 +480,7 @@ boundaryField
                 <span">\( - \)</span>
                 <span class="fragment semi-fade-out" data-fragment-index="1">\( \dfrac{v_\theta^2}{r} \)</span>
                 <span">\( + \)</span>
-                <span class="fragment semi-fade-out" data-fragment-index="1">\( v_z \dfrac{\partial v_\theta}{\partial z} \)</span>
+                <span class="fragment semi-fade-out" data-fragment-index="1">\( v_z \dfrac{\partial v_r}{\partial z} \)</span>
                 <span>\( \bigg) = -\)</span>
                 <span>\( \dfrac{\partial p}{\partial r} \)</span>
                 <span>\( + \)</span>
@@ -494,9 +494,9 @@ boundaryField
                 <span>\( - \)</span>
                 <span class="fragment semi-fade-out" data-fragment-index="1">\( \dfrac{2}{r^2}\dfrac{\partial v_r}{\partial \theta} \)</span>
                 <span>\( + \)</span>
-                <span class="fragment semi-fade-out" data-fragment-index="1">\( \dfrac{\partial^2 v_z}{\partial z^2} \)</span>
+                <span class="fragment semi-fade-out" data-fragment-index="1">\( \dfrac{\partial^2 v_r}{\partial z^2} \)</span>
                 <span>\( \bigg) + \)</span>
-                <span class="fragment semi-fade-out" data-fragment-index="4">\( \rho g_r \)</span>
+                <span>\( \rho g_r \)</span>
               </p>
 
               <h4><em>$\theta$</em>-direction:</h4>
@@ -527,7 +527,7 @@ boundaryField
                 <span>\( + \)</span>
                 <span class="fragment semi-fade-out" data-fragment-index="1">\( \dfrac{\partial^2 v_\theta}{\partial z^2} \)</span>
                 <span>\( \bigg) + \)</span>
-                <span class="fragment semi-fade-out" data-fragment-index="4">\( \rho g_\theta \)</span>
+                <span>\( \rho g_\theta \)</span>
               </p>
 
             </div>
@@ -588,9 +588,11 @@ boundaryField
           <div class="container">
             <div class="col">
               <p class="small-font">
-              A wide moving belt passes through a container of a viscous liquid. The belt moves vertically upward with a constant velocity, $V_0$, as illustrated in the figure. Because of viscous forces the belt picks up a film of fluid of thickness $h$. Gravity tends to make the fluid drain down the belt. Assume that the flow is laminar, steady, and fully developed.
+              A wide moving belt passes through a container of a viscous liquid. The belt moves vertically upward with a constant velocity, $V_0$, as illustrated in the figure. Because of viscous forces the belt picks up a film of fluid of thickness $h$. Gravity tends to make the fluid drain down the belt. Assume that the flow is incompressible, laminar, steady, and fully developed.
               </p>
               <img src="img/fig6-9a.jpg" width="400"/>
+              <p class="fragment small-font" data-fragment-index="2"><em>Aim</em>: Use the Navier–Stokes equations to determine an expression for the average velocity of the fluid film as it is dragged up the belt.
+              </p>
             </div>
 
             <div class="fragment" class="col">
