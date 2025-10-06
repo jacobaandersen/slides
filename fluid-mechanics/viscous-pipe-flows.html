@@ -14,7 +14,7 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h3 style="margin-bottom: 0;"><b>Fluid Mechanics</b></h3>
+          <h3 style="margin-bottom: 0;"><b>Fluid Mechanics Course</b></h3>
           <h2 style="margin-top: 0;">Viscous pipe flows</h2>
           <h3 style="margin-top: 40px; margin-bottom: 0;"><em>Lecturer: Jacob Andersen</em></h3>
           <h5 style="margin-top: 0px;"><em>Slides by Jakob Hærvig (AAU Energy) and Jacob Andersen (AAU Build)</em></h5>
@@ -59,57 +59,7 @@
                   </ul>
               </ul>
 
-              <ul class="fragment " data-fragment-index="2">
-                <li><b>Multiphase </b>pipe flow</li>
-
-                <img src="img/fig8-2c.jpg" width="600"/>
-                  <ul>
-                    <li>Either partially or full of liquid (or gas)</li>
-                    <li>Gravity drives flow</li>
-                    <li>Complex physics (bubbles, particles, droplets etc)</li>
-
-                  </ul>
-              </ul>
-
-            </div>
-          </div>
-        </section>
-
-      <section>
-          <h2> Much research focuses on complex multiphase flows (<a href="https://vbn.aau.dk/ws/portalfiles/portal/549460132/PHD_Jakob_Haervig_rettet_E_pdf.pdf">including own PhD</a>)</h2>
-            <div class="container">
-            <div class="col">
-              <p>Numerical simulations provide details on the process, which <em>can be difficult to capture experimentally</em>.</p>
-              <ul class="bottom-3">
-                <li class="fragment"> Turbulent pipe flow</li>
-                <li class="fragment"> Solid particles with $d_p = 10$ μm</li>
-                <li class="fragment"> Particle agglomeration (sticking) occurs due to van der Waals and electrostatic forces</li>
-              </ul>
-
-            </div>
-   
-            <div class="col">
-              <p> <em>Video</em>: Agglomeration of particles in a turbulent pipe flow</p>
-                <iframe width="800" height="415" src="https://www.youtube.com/embed/KdJ32i4EzNQ?si=u18ULF2mBM8oMTvs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-                
-        </section>
-
-        <section>
-          <h2>Why look at <em> viscous pipe flows </em>?</h2>
-
-          <div class="container">
-            <div class="col">
-              <img src="img/applications-viscous-pipe-flows1.jpg" width="800"/>
-              <img class="fragment" data-fragment-index="1" src="img/applications-viscous-pipe-flows2.jpg" width="800"/>
-              <img class="fragment" data-fragment-index="2" src="img/applications-viscous-pipe-flows3.jpg" width="800"/>
-              <img class="fragment" data-fragment-index="3" src="img/applications-viscous-pipe-flows4.jpg" width="800"/>
-            </div>
-            <div class="col">
-              <img class="fragment" data-fragment-index="4" src="img/applications-viscous-pipe-flows5.jpg" width="800"/>
-              <img class="fragment" data-fragment-index="5" src="img/applications-viscous-pipe-flows6.jpg" width="800"/>
-              <img class="fragment" data-fragment-index="6" src="img/applications-viscous-pipe-flows7.jpg" width="800"/>
-            </div>
+              </div>
           </div>
         </section>
 
@@ -131,7 +81,7 @@
               <iframe 
                 width="800" 
                 height="200" 
-                src="https://www.youtube.com/embed/WDtOuBJaCSw?si=j6Uy9NFz4Pal3pLN&amp;autoplay=1&mute=1&modestbranding=1&fs=0&loop=1&playlist=WDtOuBJaCSw" 
+                src="https://www.youtube.com/embed/WDtOuBJaCSw?si=j6Uy9NFz4Pal3pLN&autoplay=1&mute=1&modestbranding=1&fs=0&loop=1&playlist=WDtOuBJaCSw" 
                 title="YouTube video player" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; loop" 
@@ -191,10 +141,10 @@
             <div class="col">
               <p >Pressure varies <em>in fully-developed laminar flow <b>linearly </b></em> along the pipe</p>
               <ul>
-                <li>$\partial p/\partial x= -\Delta p/p < 0$</li>
+                <li>$\partial p/\partial x= -\Delta p/l < 0$</li>
               </ul>
 
-              <p class="fragment" data-fragment-index="1">Pressure drop in pipe flows is balanced by:</p>
+              <p class="fragment" data-fragment-index="1">Pressure drop <em>in non-developed laminar</em> pipe flows is balanced by (entrance, bends, etc.):</p>
               <ul>
                 <li class="fragment" data-fragment-index="2">Pressure drop due to friction (viscous effects)</li>
                 <li class="fragment" data-fragment-index="3">Pressure drop due to acceleration/deceleration of flow (inertia effects)</li>
@@ -204,8 +154,8 @@
               <p class="fragment" data-fragment-index="5">Recall from analytical solutions earlier:</p>
               <ul>
               <p class="singleline-math small-left-padding">
-                <span class="fragment" data-fragment-index="5">\(Q = \dfrac{\pi R^4}{8\mu} \left(-\dfrac{\partial p}{\partial z}\right)\)</span>
-                <span class="fragment" data-fragment-index="6">\(= \dfrac{\pi D^4}{128\mu} \left(-\dfrac{\partial p}{\partial z}\right)\)</span>
+                <span class="fragment" data-fragment-index="5">\(Q = - \dfrac{\pi R^4}{8\mu} \left(\dfrac{\partial p}{\partial z}\right)\)</span>
+                <span class="fragment" data-fragment-index="6">\(= - \dfrac{\pi D^4}{128\mu} \left(\dfrac{\partial p}{\partial z}\right)\)</span>
                 <span class="fragment" data-fragment-index="7">\(= \dfrac{\pi D^4 \Delta p}{128\mu l}\)</span>
                 <ul>
                   <li class="fragment" data-fragment-index="8"><em>Valid</em> for laminar, steady, horisontal, fully-developed flow</li>
@@ -231,14 +181,13 @@
           <div class="container">
             <div class="col">
               <p class="small-font">
-                An oil with a viscosity of $\mu = 0.1 \, \text{Pa} \cdot \text{s}$ and density $\rho = 900 \, \text{kg/m}^3$ flows in a pipe of diameter $D = 0.020 \, \text{m}$.
+                An oil with a viscosity of $\mu = 0.4 \, \text{Pa} \cdot \text{s}$ and density $\rho = 900 \, \text{kg/m}^3$ flows in a pipe of diameter $D = 0.020 \, \text{m}$.
               </p>
               <ul>
                 <li class="small-font"><em>(a)</em> What pressure drop, $p_1-p_2$, is needed to produce
-                a flowrate of $Q=2.0 \times 10^{-5} \, \text{m}^3/\text{s}$ if the pipe is horizontal with
+                a flowrate of $Q=2.0 \cdot 10^{-5} \, \text{m}^3/\text{s}$ if the pipe is horizontal with
                 $x_1 = 0$ and $x_2 = 10 \, \text{m}$?</li>
                 <li class="small-font"><em>(b)</em> How steep a hill, $\theta$, must the pipe be on to if the oil is to flow through the pipe at the same rate as in part <em>(a)</em>, but with $p_1=p_2$?</li>
-                <li class="small-font"><em>(c)</em> For the conditions of part <em>(b)</em>, if $p_1=200$ kPa, what is the pressure at section $x_3=5$ m, where $x$ is measured along the pipe?</li>
               </ul>
             </div>
 
