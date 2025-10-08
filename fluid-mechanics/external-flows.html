@@ -1,29 +1,596 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Jakob Hærvig">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../reveal.js/dist/reset.css">
-    <link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="../../custom/theme/haervig.css">
-    <link rel="stylesheet" href="../../custom/plugins/highlight/haervig.css">
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Jacob Andersen">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../../custom/theme/haervig.css">
+  <link rel="stylesheet" href="../../custom/plugins/highlight/haervig.css">
+</head>
 
-    <!--slides-->
-    <div class="reveal">
-      <div class="slides">
-        <section>
-          <h3 style="margin-bottom: 0;"><b>Fluid Mechanics</b></h3>
-          <h2 style="margin-top: 0;">External flows</h2>
-          <h3 style="margin-top: 40px; margin-bottom: 0;"><em>Lecturer: Jakob Hærvig</em></h3>
-          <h5 style="margin-top: 0px;"><em>Slides by Jakob Hærvig (AAU Energy) and Jacob Andersen (AAU Build)</em></h5>
-        </section>
-      </div>
+<body>
+
+  <!--slides-->
+  <div class="reveal">
+    <!-- Back to Slidedecks link -->
+    <div style="position: fixed; bottom: 20px; left: 30px; z-index: 1000;">
+      <h2><a href="../" style="color: #222; text-decoration: none;">←</a></h3>
     </div>
 
-    <script type="module" src="../../main.js"></script>
-  </body>
+    <div class="slides">
+      <section>
+        <h3 style="margin-bottom: 0;"><b>Fluid Mechanics Course</b></h3>
+        <h2 style="margin-top: 0;">External flows</h2>
+        <h3 style="margin-top: 40px; margin-bottom: 0;"><em>Lecturer: Jacob Andersen</em></h3>
+        <h5 style="margin-top: 0px;"><em>Slides by Jacob Andersen (AAU BUILD) and Jakob Hærvig (AAU ENERGY)</em></h5>
+      </section>
+
+      <!-- Introduction to External Flows - Slide 1 -->
+      <section>
+        <h2>Introduction to External Flows</h2>
+        <div class="container">
+          <div class="col">
+            <p><em>External flows</em>: Flow around bodies immersed in fluid</p>
+            <br>
+            <p class="fragment" data-fragment-index="1"><b>Examples:</b></p>
+            <ul>
+              <li class="fragment" data-fragment-index="1">Air flow around (aerodynamics):</li>
+              <ul>
+                <li class="fragment" data-fragment-index="2">buildings</li>
+                <li class="fragment" data-fragment-index="2">wind turbine blade</li>
+                <li class="fragment" data-fragment-index="2">airplanes</li>
+                <li class="fragment" data-fragment-index="2">cars</li>
+              </ul>
+              <li class="fragment" data-fragment-index="3">Water flow around (hydrodynamics):</li>
+              <ul>
+                <li class="fragment" data-fragment-index="4">offshore wind turbine foundation</li>
+                <li class="fragment" data-fragment-index="4">vessels</li>
+                <li class="fragment" data-fragment-index="4">submarines</li>
+                <li class="fragment" data-fragment-index="4">water turbine</li>
+              </ul>
+            </ul>
+          </div>
+          <div class="col" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+            <p class="fragment" data-fragment-index="1" style="width: 80%; text-align: center;">
+              <img src="img/examples-external-flows-chatgpt.png" alt="External Flows Examples"
+                style="max-width: 80%; height: auto;">
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analysis Approaches - Slide 2 -->
+      <section>
+        <h2>Analysis of External Flows</h2>
+        <div class="container">
+          <div class="col">
+            <p class="fragment" data-fragment-index="1">Accurate description of <em>external fluid forces</em>: Key in
+              optimizing designs with regards to, e.g.,</p>
+            <ul>
+              <li class="fragment" data-fragment-index="2">Power generation (wind, hydro, wave)</li>
+              <li class="fragment" data-fragment-index="3">Fuel reductions (airplanes, cars, vessels)</li>
+              <li class="fragment" data-fragment-index="4">Structural strength (material usage)</li>
+            </ul>
+            <p class="fragment" data-fragment-index="5">Approaches</p>
+            <ul>
+              <li class="fragment" data-fragment-index="6">Limited <em>analytical</em> techniques</li>
+              <li class="fragment" data-fragment-index="7"><em>Experimental</em> methods: Wind tunnels, towing tanks,
+                wave bassins etc.</li>
+              <li class="fragment" data-fragment-index="8"><em>Numerical</em> methods (CFD): Large variation in fidelity
+              </li>
+            </ul>
+          </div>
+          <div class="col" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+            <div class="fragment" data-fragment-index="7" style="width: 80%; text-align: center;">
+              <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/sV_6E1Lh7yo?list=PLYSAqWJoC9y0-QBi1Ks1VxPPIJFzlI8MQ&start=27&autoplay=1&mute=1"
+                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Body Classification and Flow Characteristics - Slide 3 -->
+      <section>
+        <h2>Body Classification and Flow Characteristics</h2>
+        <div class="container">
+          <div class="col">
+            <p class="fragment" data-fragment-index="1"><b>Categorization of bodies:</b></p>
+            <ul>
+              <li class="fragment" data-fragment-index="2"><em>2-D</em> bodies (infinitely long, constant cross-section)
+              </li>
+              <li class="fragment" data-fragment-index="3"><em>Axisymmetric</em> bodies (cross-section rotated about
+                symmetry axis)</li>
+              <li class="fragment" data-fragment-index="4"><em>3-D</em> bodies</li>
+            </ul>
+            <p class="fragment" data-fragment-index="5">Note: Nominal 2-D bodies may need to be modelled as 3-D
+              depending on the turbulence characteristics of the flow</p>
+            <p class="fragment"><b>Further categorization:</b></p>
+            <ul>
+              <li class="fragment"><em>Streamlined</em> bodies (airfoils, racing cars) - little fluid disturbance</li>
+              <li class="fragment"><em>Blunt/bluff</em> bodies (stalled airfoils, buildings, parachutes) - significant
+                fluid disturbance</li>
+              <li class="fragment">Generally less fluid resistance to streamlined bodies</li>
+            </ul>
+          </div>
+          <div class="col"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+            <p class="fragment" data-fragment-index="1" style="width: 100%; text-align: center;">
+              <img src="img/fig9-2.png" alt="Body Classification Examples" style="max-width: 100%; height: auto;">
+            </p>
+            <p class="fragment" data-fragment-index="5" style="width: 100%; text-align: center; margin-top: 20px;">
+              <img src="img/2-d-plate.png" alt="2-D flat plate" style="max-width: 80%; height: auto;">
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lift and Drag Concepts - Slide 4 -->
+      <section>
+        <h2>Lift and Drag Concepts</h2>
+        <div class="container">
+          <div class="col">
+            <p>External force on "stationary" body in flow with <em>upstream velocity $U$</em></p>
+            <ul>
+              <li class="fragment" data-fragment-index="1">
+                Normal stresses due to <b>pressure</b>
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                Wall shear stresses due to <b>viscous effects</b>
+              </li>
+            </ul>
+            <p class="fragment" data-fragment-index="3">
+              Pressure and wall shear stress distributions: Useful for detailed design and analysis
+            </p>
+            <p class="fragment" data-fragment-index="4">
+              Usually we are mostly interested in the <em>integrated</em> stresses on the body, i.e., the <em>resultant
+                force</em></p>
+            <ul>
+              <li class="fragment" data-fragment-index="5">
+                <b>Drag</b> $D$: Component of the resultant force in the direction of the free-stream velocity $U$
+              </li>
+              <li class="fragment" data-fragment-index="6">
+                <b>Lift</b> $L$: Component of the resultant force normal to the free-stream velocity $U$
+              </li>
+            </ul>
+            <p class="fragment" data-fragment-index="7">$p$ and $\tau_w$ vary in magnitude and direction: Contribute to
+              both $D$ and $L$</p>
+          </div>
+          <div class="col"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 100%;">
+            <img class="fragment" data-fragment-index="1" src="img/fig9-3a.png" alt="Lift and Drag - fig9-3a"
+              style="max-width: 80%; margin-bottom: 20px;">
+            <img class="fragment" data-fragment-index="2" src="img/fig9-3b.png" alt="Lift and Drag - fig9-3b"
+              style="max-width: 80%; margin-bottom: 20px;">
+            <img class="fragment" data-fragment-index="5" src="img/fig9-3c.png" alt="Lift and Drag - fig9-3c"
+              style="max-width: 80%;">
+          </div>
+        </div>
+      </section>
+
+      <!-- Lift and Drag Coefficients - Slide 5 -->
+      <section>
+        <h2>Lift and Drag Coefficients</h2>
+        <div class="container">
+          <div class="col">
+            <p class="fragment" data-fragment-index="1">$p$ and $\tau_w$ distributions are <em>difficult</em> to obtain
+              (virtually only from <em>CFD</em>)</p>
+            <p class="fragment" data-fragment-index="2">Often, we use <em>dimensionless coefficients</em> to estimate
+              drag and lift forces:</p>
+            <ul>
+              <li class="fragment" data-fragment-index="3"><b>Drag coefficient:</b> $$C_D = \dfrac{D}{\frac{1}{2} \rho
+                U^2 A}$$</li>
+              <li class="fragment" data-fragment-index="4"><b>Lift coefficient:</b> $$C_L = \dfrac{L}{\frac{1}{2} \rho
+                U^2 A}$$</li>
+            </ul>
+            <p class="fragment" data-fragment-index="5">Characteristic area $A$:</p>
+            <ul>
+              <li class="fragment" data-fragment-index="6">Frontal area (projected in streamwise direction)</li>
+              <li class="fragment" data-fragment-index="7">Planform area (projected normal to streamwise direction)</li>
+              <li class="fragment" data-fragment-index="8">Other definitions (wetted surface, etc.)</li>
+            </ul>
+            <p class="fragment" data-fragment-index="9"><b>Power consumption:</b></p>
+            <p class="fragment" data-fragment-index="10">$$P = D \cdot U = \frac{1}{2} \rho U^3 C_D A$$
+              <span class="fragment" data-fragment-index="11"><em>Scales with $U^3$!</em></span>
+            </p>
+          </div>
+          <div class="col"
+            style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+            <div class="fragment" data-fragment-index="9" style="width: 100%; text-align: center;">
+              <img src="img/ferrari.jpg" alt="Racecar" style="max-width: 70%; margin-bottom: 20px;">
+              <img src="img/suv.jpg" alt="VW Van" style="max-width: 70%;">
+              <p style="margin-top: 10px; font-size: 1em;"><em>Power required to overcome drag increases rapidly with
+                  speed!</em></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pressure and Friction Drag - Slide 6 -->
+      <section>
+        <h2>Pressure and Friction Drag</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              Drag can be separated into two components:
+            </p>
+            <ul>
+              <li class="fragment" data-fragment-index="1">Drag caused by <em>viscous shear</em> stresses: <b>friction
+                  drag</b></li>
+              <li class="fragment" data-fragment-index="2">Drag caused by <em>pressure</em> differences: <b>pressure
+                  drag</b>
+              </li>
+            </ul>
+            <p class="fragment" data-fragment-index="3">Pressure (form) drag dominates for blunt bodies, while skin
+              friction
+              dominates for streamlined</p>
+          </div>
+          <div class="col">
+            </p>
+            <p>
+            <table class="fragment" data-fragment-index="3" style="text-align: center; margin: auto;">
+              <thead>
+                <tr>
+                  <th>Shape and Flow</th>
+                  <th>Pressure (form)<br>drag</th>
+                  <th>Friction<br>drag</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Flow_plate.svg" alt="Flow over plate"
+                      width="173" height="64">
+                  </td>
+                  <td>≈0%</td>
+                  <td>≈100%</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Flow_foil.svg" alt="Flow over foil"
+                      width="173" height="64">
+                  </td>
+                  <td>≈10%</td>
+                  <td>≈90%</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Flow_sphere.svg"
+                      alt="Flow over sphere" width="173" height="152">
+                  </td>
+                  <td>≈90%</td>
+                  <td>≈10%</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flow_plate_perpendicular.svg"
+                      alt="Flow over perpendicular plate" width="173" height="152">
+                  </td>
+                  <td>≈100%</td>
+                  <td>≈0%</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="fragment" data-fragment-index="3"
+              style="text-align: right; font-size: 0.8em; margin-right: 20px;">
+              <a href="https://en.wikipedia.org/wiki/Drag_(physics)" target="_blank">Drag (physics)</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Shape Dependence on Drag</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              Two bodies where <em>characteristic lengths</em> vary with an <em>order of magnitude</em>: <em>Equal
+                drag</em>!
+            </p>
+            <ul>
+              <li class="fragment">Underlines the impact of streamlining</li>
+              <li class="fragment"><b>Separation causes the drag!</b></li>
+            </ul>
+          </div>
+          <div class="col" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <img src="img/fig9-20a.png" alt="cylinder in flow D" style="max-width: 50%; margin-bottom: 20px;">
+            <img src="img/fig9-20b.png" alt="sprut in flow 10D" style="max-width: 100%;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Dimensionless Numbers in External Flows</h2>
+        <div class="container">
+          <div class="col">
+            <p>Shape of body is important, but not the full story.</p>
+            <ul>
+              <li class="fragment" data-fragment-index="1"><b>Simple shapes $\neq$ simple flows</b></li>
+              <li class="fragment" data-fragment-index="2">Simplicity (or lack of) is <em>governed</em> by the <em>flow
+                  characteristics</em></li>
+              <ul>
+                <li class="fragment" data-fragment-index="3">Flow characteristics represented by <em>dimensionless
+                    numbers</em>:</li>
+                <ul>
+                  <li class="fragment" data-fragment-index="4"><em>Reynolds number</em> ($Re$): inertia / viscous</li>
+                  <li class="fragment" data-fragment-index="5"><em>Froude number</em> ($Fr$): gravity / inertia</li>
+                  <li class="fragment" data-fragment-index="6"><em>Mach number</em> ($Ma$): inertia / elasticity
+                    (compressibility)</li>
+                  <li class="fragment" data-fragment-index="7"><em>Weber number</em> ($We$): inertia / surface tension
+                  </li>
+                </ul>
+              </ul>
+              <li class="fragment" data-fragment-index="8">Common orders of magnitude for charactheristic lengths and
+                upstream
+                velocities in external engineering flows yields:</li>
+              <ul>
+                <li class="fragment" data-fragment-index="9">$10 < Re < 10^9$</li>
+                <li class="fragment" data-fragment-index="10">Rule of thumb: $Re > 100$ &rarr; flow dominated by
+                  inertial effects</li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>$Re$-dependency for streamlined body</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              <em>Parallel flow to a flat plate</em> at three different $Re = \{$$0.1$$,\,$$10$$,\,$$10^7$$\}$.
+            </p>
+            <ul>
+              <li>Plate length: $l$</li>
+              <li>Upstream velocity: $U$</li>
+              <li>Boundary layer: $u &lt; 0.99U$</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>$Re$-dependency for streamlined body</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              <em>Parallel flow to a flat plate</em> at three different $Re = \{$<b>$0.1$</b>$,\,$$10$$,\,$$10^7$$\}$.
+            </p>
+            <ul>
+              <li>Plate length: $l$</li>
+              <li>Upstream velocity: $U$</li>
+              <li>Boundary layer: $u &lt; 0.99U$</li>
+              <li class="fragment" data-fragment-index="1">Large disturbance of flow</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="img/fig9-5a.png" alt="Flow over flat plate at different Reynolds numbers"
+              style="max-width: 80%; margin-top: 20px;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>$Re$-dependency for streamlined body</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              <em>Parallel flow to a flat plate</em> at three different $Re = \{$$0.1$$,\,$<b>$10$</b>$,\,$$10^7$$\}$.
+            </p>
+            <ul>
+              <li>Plate length: $l$</li>
+              <li>Upstream velocity: $U$</li>
+              <li>Boundary layer: $u &lt; 0.99U$</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="img/fig9-5b.png" alt="Flow over flat plate at different Reynolds numbers"
+              style="max-width: 80%; margin-top: 20px;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>$Re$-dependency for streamlined body</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              <em>Parallel flow to a flat plate</em> at three different $Re = \{$$0.1$$,\,$$10$$,\,$<b>$10^7$</b>$\}$.
+            </p>
+            <ul>
+              <li>Plate length: $l$</li>
+              <li>Upstream velocity: $U$</li>
+              <li>Boundary layer: $u &lt; 0.99U$</li>
+              <li class="fragment" data-fragment-index="1">Small viscid area</li>
+              <ul class="fragment" data-fragment-index="2">
+                <li>Thin BL: $\delta_{99} \ll l$</li>
+                <li>Wake region</li>
+              </ul>
+          </div>
+          <div class="col">
+            <img src="img/fig9-5c.png" alt="Flow over flat plate at different Reynolds numbers"
+              style="max-width: 80%; margin-top: 20px;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>$Re$-dependency for bluff body</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              <em>Flow past a circular cylinder </em> at (same) three $Re = \{$$0.1$$,\,$$10$$,\,$$10^7$$\}$.
+            </p>
+            <ul>
+              <li>Diameter: $D$</li>
+              <li>Upstream velocity: $U$</li>
+              <li>Boundary layer: $u &lt; 0.99U$</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>$Re$-dependency for bluff body</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              <em>Flow past a circular cylinder </em> at (same) three $Re = \{$<b>$0.1$</b>$,\,$$10$$,\,$$10^7$$\}$.
+            </p>
+            <ul>
+              <li>Diameter: $D$</li>
+              <li>Upstream velocity: $U$</li>
+              <li>Boundary layer: $u &lt; 0.99U$</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="img/fig9-6a.png" alt="Flow over cylinder at different Reynolds numbers"
+              style="max-width: 80%; margin-top: 20px;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>$Re$-dependency for bluff body</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              <em>Flow past a circular cylinder </em> at (same) three $Re = \{$$0.1$$,\,$<b>$10$</b>$,\,$$10^7$$\}$.
+            </p>
+            <ul>
+              <li>Diameter: $D$</li>
+              <li>Upstream velocity: $U$</li>
+              <li>Boundary layer: $u &lt; 0.99U$</li>
+              <li class="fragment" data-fragment-index="1"><em>Separation</em> occurs</li>
+              <ul>
+                <li class="fragment" data-fragment-index="2">Inertia too large to follow contour of body</li>
+                <li class="fragment" data-fragment-index="3">Recirculation region appears</li>
+              </ul>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="img/fig9-6b.png" alt="Flow over cylinder at different Reynolds numbers"
+              style="max-width: 100%; margin-top: 20px;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>$Re$-dependency for bluff body</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              <em>Flow past a circular cylinder </em> at (same) three $Re = \{$$0.1$$,\,$$10$$,\,$<b>$10^7$</b>$\}$.
+            </p>
+            <ul>
+              <li>Diameter: $D$</li>
+              <li>Upstream velocity: $U$</li>
+              <li>Boundary layer: $u &lt; 0.99U$</li>
+              <li class="fragment" data-fragment-index="1"><em>Separation</em> forms a turbulent wake</li>
+              <ul class="fragment" data-fragment-index="2">
+                <li>Thin BL: $\delta_{99} \ll l$</li>
+              </ul>
+              <li class="fragment" data-fragment-index="3">Recalling the costs of resolving turbulence - which part of
+                this domain do you want to spent your bucks on resolving turbulence?</li>
+              <ul class="fragment" data-fragment-index="4">
+                <li>
+                  For more info refer to (e.g.) papers on
+                  <a href="https://ntrs.nasa.gov/api/citations/20010080473/downloads/20010080473.pdf" target="_blank">
+                    Detached Eddy Simulation (DES)
+                  </a>
+                </li></a>
+              </ul>
+            </ul>
+          </div>
+          <div class="col">
+            <br>
+            <img src="img/fig9-6c.png" alt="Flow over cylinder at different Reynolds numbers"
+              style="max-width: 100%; margin-top: 20px;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>$Re$-dependency: Drag Crisis</h2>
+        <div class="container">
+          <div class="col">
+            <p>
+              Closer inspection of the flow past a circular cylinder and sphere as a function of $Re$.
+            </p>
+            <ul>
+              <li class="fragment" data-fragment-index="1">Drag crisis (E): Sudden drop at $10^5 \lt Re \lt 10^6$</li>
+            </ul>
+            <img src="img/fig9-21a.png" alt="CD for circ cylinder and sphere"
+              style="max-width: 100%; margin-top: 10px;">
+            <ul>
+              <li class="fragment" data-fragment-index="3">Surface roughness can trigger turbulent BL at lower $Re$</li>
+              <li class="fragment" data-fragment-index="4">Typical golf balls: $10^4 \lt Re \lt 10^5$</li>
+              <li class="fragment" data-fragment-index="5"><em>Why do golf balls have dimples?</em></li>
+            </ul>
+          </div>
+          <div class="col" style="display: flex; justify-content: center; align-items: center;">
+            <img class="fragment" data-fragment-index="2" src="img/fig9-21b.png"
+              alt="Flow for different Re on circ cylinder" style="max-width: 70%; margin-top: 20px;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Force coefficients: Where to find them</h2>
+        <div class="container">
+          <div class="col">
+        <p>
+          Force coefficients: Drag, lift, added mass coefficients have been determined experimentally or numerically
+          for many typical geometries and flow conditions
+        </p>
+        <ul>
+          <li class="fragment" data-fragment-index="1">Example: Drag coefficients for 2-D bodies</li>
+          <li class="fragment" data-fragment-index="2">Tables with force coefficients can be found in various
+            standards, e.g.
+            <ul>
+          <li class="fragment" data-fragment-index="3">
+            <a href="https://www.dnv.com/energy/standards-guidelines/dnv-rp-c205-environmental-conditions-and-environmental-loads/"
+              target="_blank">
+              DNV RP C205
+            </a>
+          </li>
+            </ul>
+          </li>
+          <li class="fragment" data-fragment-index="3">Or fluid mechanics textbooks:</li>
+          <ul>
+            <li class="fragment" data-fragment-index="3">
+          <a href="https://ia800606.us.archive.org/17/items/FluidDynamicDragHoerner1965/Fluid-dynamic_drag__Hoerner__1965_text.pdf"
+            target="_blank">
+            Hoerner (1965)
+          </a>
+                </li>
+                <li class="fragment" data-fragment-index="3">
+                  <a href="https://archive.org/details/appliedfluiddyna0000blev" target="_blank">
+                    Blevins (1984)
+                  </a>
+                </li>
+              </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col" style="display: flex; flex-direction: column; ">
+            <img class="fragment" data-fragment-index="1" src="img/fig9-28.png"
+              alt="Drag coefficients for 2-D bodies (Hoerner, Blevins)" style="max-width: 100%; margin-bottom: 10px;">
+            <p class="fragment" data-fragment-index="1" style="font-size: 0.8em; text-align: right;">
+              <a href="https://ia800606.us.archive.org/17/items/FluidDynamicDragHoerner1965/Fluid-dynamic_drag__Hoerner__1965_text.pdf"
+                target="_blank">Hoerner (1965)</a> &amp;
+              <a href="https://archive.org/details/appliedfluiddyna0000blev" target="_blank">Blevins (1984)</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <script type="module" src="../../main.js"></script>
+</body>
+
 </html>
