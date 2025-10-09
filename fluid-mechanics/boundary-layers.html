@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Jacob Andersen">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="../../custom/theme/haervig.css">
+  <link rel="stylesheet" href="../../custom/plugins/highlight/haervig.css">
+</head>
+
+<body>
+
+  <!--slides-->
+  <div class="reveal">
+    <!-- Back to Slidedecks link -->
+    <div style="position: fixed; bottom: 20px; left: 30px; z-index: 1000;">
+      <h2><a href="../" style="color: #222; text-decoration: none;">←</a></h3>
+    </div>
+
+    
+
+    <div class="slides">
+      <section>
+        <h3 style="margin-bottom: 0;"><b>Fluid Mechanics</b></h3>
+        <h2 style="margin-top: 0;">Boundary layers</h2>
+        <h3 style="margin-top: 40px; margin-bottom: 0;"><em>Lecturer: Jacob Andersen</em></h3>
+        <h5 style="margin-top: 0px;"><em>Slides by Jakob Hærvig (AAU ENERGY) and Jacob Andersen (AAU BUILD)</em></h5>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="col">
+            <h3>Boundary Layer Structure</h3>
+            <p>Boundary layer (BL) structure and development for <em>parallel flow over an infinite flat plate</em></p>
+            <ul>
+              <li class="fragment" data-fragment-index="1">Only fluid in BL "feels" the plate</li>
+              <li class="fragment" data-fragment-index="2">$\text{Re}_x = \rho U x / \mu$</li>
+            </ul>
+          </div>
+          <div class="col">
+            <br><br>
+            <img class="fragment" data-fragment-index="3" src="img/fig9-7.jpg" alt="Boundary Layer Structure" style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="col">
+            <h3>Boundary Layer Thickness</h3>
+            <p>BL thickness definitions:</p>
+            <ul>
+              <li><em>Standard BL thickness</em> $\delta_{99}$</li>
+              <li><em>BL displacement thickness</em> $\delta^*$</li>
+              <li class="fragment" data-fragment-index="1"><em>BL momentum thickness</em> $\Theta$</li>
+            </ul>
+          </div>
+          <div class="col">
+            <img src="img/fig9-8.jpg" alt="Boundary Layer Thickness" style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Parallel flow to an infinite flat plate</h2>
+        <p class="bottom-2"> </p>
+        <p> $\text{Re}_x=\text{Re}_\tau=\rho U x / \mu$ </p>
+        <iframe width="1400" height="800"
+          src="https://www.youtube.com/embed/e1TbkLIDWys?si=p1s59IRVSnHWkj_c&amp;start=42" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="col">
+            <h3>Turbulent Shear Stress</h3>
+            <p>Recall how the instantaneous (horizontal) velocity $u$ could be decomposed into a time-averaged and fluctuating part (<em>Reynolds decomposition</em>):</p>
+            <p style="text-align: center;">
+              $$u(x,y,z,t) = \overline{u}(x,y,z) + u'(x,y,z,t)$$
+            </p>
+            <ul>
+              <li class="fragment" data-fragment-index="1">Tempting to apply our Newtonian shear stress definition directly to $\overline{u}$</li>
+              <li class="fragment" data-fragment-index="2">However, $\tau \neq \mu \frac{d\overline{u}}{dy}$</li>
+            </ul>
+              <p class="fragment" data-fragment-index="3">Let us review the underlying physics:</p>
+            <ul>
+              <li class="fragment" data-fragment-index="4"><b>Laminar BL</b>
+                <ul>
+                  <li>Molecular diffusion</li>
+                  <li>$x$-momentum transfer in $y$ due to $$\frac{du}{dy} \neq 0$$</li>
+                  <li>&rarr; Shear</li>
+                </ul>
+              </li>
+              <li class="fragment" data-fragment-index="5"><b>Turbulent BL</b>
+                <ul>
+                  <li>Finite size 3-D eddies</li>
+                  <li>Increasing momentum transfer</li>
+                  <li>Extra term in shear stress: $$\tau = \mu \frac{d\overline{u}}{dy} - \rho \overline{u'v'} = \tau_{lam} + \tau_{turb}$$</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <img class="fragment" data-fragment-index="3" src="img/fig8-14.png" alt="Turbulent Shear Stress" style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="col">
+            <h3>Reynolds Stresses</h3>
+            <p>The additional contribution to shear stress from fluctuations $\tau_{turb} = -\rho \overline{u'v'}$ has units of Pa and is termed <em>Reynolds stresses</em>.</p>
+            <ul>
+              <li class="fragment" data-fragment-index="1">These stresses are flow dependent and difficult to describe</li>
+              <ul>
+                <li class="fragment" data-fragment-index="2"><em>Fluctuating</em> velocities influence the <em>mean</em> flow</li>
+                <li class="fragment" data-fragment-index="3"><b>Boussinesq hypothesis</b>: $$\tau = \nu_t \frac{d\overline{u}}{dy}$$</li>
+                <li class="fragment" data-fragment-index="4">Shifts the problem from Reynolds stresses to $\nu_t$ (flow dependent scalar)</li>
+                <li class="fragment" data-fragment-index="5">The basis of widely used RANS and URANS turbulence models</li>
+              </ul>
+              <li class="fragment" data-fragment-index="6">Typical ratio of $\tau_{lam}$ and $\tau_{turb}$ in turbulent BL varies with distance to the wall (here for a pipe flow)</li>
+            </ul>
+          </div>
+            <div class="col">
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <img class="fragment" data-fragment-index="6" src="img/fig8-15a.png" alt="Relative scales of laminar and turbulent shear stress (a)" style="max-width: 50%; height: auto;">
+              <img class="fragment" data-fragment-index="6" src="img/fig8-15b.png" alt="Relative scales of laminar and turbulent shear stress (b)" style="max-width: 50%; height: auto;">
+            </div>
+            </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="col">
+        <h2>Turbulent Velocity Profile</h2>
+        <p" data-fragment-index="2">Fully developed turbulent BL: <em>Three regions</em> with distinct physics given from distance to wall</p>
+        <ul>
+          <li class="fragment" data-fragment-index="3">Dimensionless $y$ coordinate: $y^+ = y u^* / \nu$ with $u^* = \sqrt{\tau_w / \rho}$</li>
+          <li class="fragment" data-fragment-index="4">Dimensionless velocity: $u^+ = \overline{u} / u^*$</li>
+        </ul>
+        <ul>
+          <li class="fragment" data-fragment-index="5"><em>Viscous sublayer</em> ($y^+ < 5$)
+            <ul>
+          <li class="fragment" data-fragment-index="5">Viscous forces dominant over Reynolds stresses</li>
+          <li class="fragment" data-fragment-index="5">Smooth wall: $u^+ = y^+$</li>
+            </ul>
+          </li>
+          <li class="fragment" data-fragment-index="6"><em>Buffer layer</em> ($5 < y^+ < 30$)
+            <ul>
+          <li class="fragment" data-fragment-index="7">Both viscous sublayer and log law important (transition function)</li>
+            </ul>
+          </li>
+          <li class="fragment" data-fragment-index="8"><em>Log-law layer</em> ($30 < y^+ < 200$)
+            <ul>
+          <li class="fragment" data-fragment-index="8">Velocity varies as the logarithm of $y$</li>
+          <li class="fragment" data-fragment-index="8">Experimentally determined (law of the wall): $$u^+ = \frac{1}{\kappa} \ln(y^+) + C^+$$</li>
+          <li class="fragment" data-fragment-index="8">Where $\kappa$ is Von Kárman Constant: $\kappa=0.41$ and $C^+ = 5$ (for smooth walls and flow over infinite flat plate)</li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+          <li class="fragment" data-fragment-index="9">Viscous sublayer extremely thin</li>
+          <li class="fragment" data-fragment-index="10"><b>Roughness</b> of the wall can enter viscous sublayer $\rightarrow$ changed $u(y)$</li>
+        </ul>
+          </div>
+          <div class="col">
+        <img class="fragment" data-fragment-index="5" src="img/wall_vel.png" alt="Turbulent Velocity Profile near Wall" style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+      </section>
+      
+    </div>
+  </div>
+  <script type="module" src="../../main.js"></script>
+</body>
+
+</html>
