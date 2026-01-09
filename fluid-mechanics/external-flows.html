@@ -85,9 +85,8 @@
           </div>
           <div class="col" style="display: flex; align-items: center; justify-content: center; height: 100%;">
             <div class="fragment" data-fragment-index="7" style="width: 80%; text-align: center;">
-              <iframe width="560" height="315"
-                src="https://www.youtube.com/embed/sV_6E1Lh7yo?list=PLYSAqWJoC9y0-QBi1Ks1VxPPIJFzlI8MQ&start=27&autoplay=1&mute=1"
-                allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe width="560" height="315" data-src="https://www.youtube.com/embed/sV_6E1Lh7yo?list=PLYSAqWJoC9y0-QBi1Ks1VxPPIJFzlI8MQ&start=27&autoplay=1&mute=1"
+                src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -202,7 +201,7 @@
             <div class="fragment" data-fragment-index="9" style="width: 100%; text-align: center;">
               <img src="img/ferrari.jpg" alt="Racecar" style="max-width: 70%; margin-bottom: 20px;">
               <img src="img/suv.jpg" alt="VW Van" style="max-width: 70%;">
-              <p style="margin-top: 10px; font-size: 1em;"><em>Power required to overcome drag increases rapidly with
+              <p class="fragment" data-fragment-index="12" style="margin-top: 10px; font-size: 1em;"><em>Power required to overcome drag increases rapidly with
                   speed!</em></p>
             </div>
           </div>
@@ -221,12 +220,10 @@
               <li class="fragment" data-fragment-index="1">Drag caused by <em>viscous shear</em> stresses: <b>friction
                   drag</b></li>
               <li class="fragment" data-fragment-index="2">Drag caused by <em>pressure</em> differences: <b>pressure
-                  drag</b>
+                  drag</b> or <b>form drag</b>
               </li>
             </ul>
-            <p class="fragment" data-fragment-index="3">Pressure (form) drag dominates for blunt bodies, while skin
-              friction
-              dominates for streamlined</p>
+            <p class="fragment" data-fragment-index="3">Pressure drag dominates for blunt bodies, while friction drag dominates for streamlined</p>
           </div>
           <div class="col">
             </p>
@@ -315,11 +312,11 @@
                 <li class="fragment" data-fragment-index="3">Flow characteristics represented by <em>dimensionless
                     numbers</em>:</li>
                 <ul>
-                  <li class="fragment" data-fragment-index="4"><em>Reynolds number</em> ($Re$): inertia / viscous</li>
-                  <li class="fragment" data-fragment-index="5"><em>Froude number</em> ($Fr$): gravity / inertia</li>
-                  <li class="fragment" data-fragment-index="6"><em>Mach number</em> ($Ma$): inertia / elasticity
+                  <li class="fragment" data-fragment-index="4"><em>Reynolds number</em> ($\text{Re}$): inertia / viscous</li>
+                  <li class="fragment" data-fragment-index="5"><em>Froude number</em> ($\text{Fr}$): inertia / gravity</li>
+                  <li class="fragment" data-fragment-index="6"><em>Mach number</em> ($\text{Ma}$): inertia / elasticity
                     (compressibility)</li>
-                  <li class="fragment" data-fragment-index="7"><em>Weber number</em> ($We$): inertia / surface tension
+                  <li class="fragment" data-fragment-index="7"><em>Weber number</em> ($\text{We}$): inertia / surface tension
                   </li>
                 </ul>
               </ul>
@@ -493,9 +490,9 @@
               <ul class="fragment" data-fragment-index="2">
                 <li>Thin BL: $\delta_{99} \ll l$</li>
               </ul>
-              <li class="fragment" data-fragment-index="3">Recalling the costs of resolving turbulence - which part of
-                this domain do you want to spent your bucks on resolving turbulence?</li>
-              <ul class="fragment" data-fragment-index="4">
+              <li class="fragment" data-fragment-index="3">In a CFD simulation which region of this flow do you think is most difficult to accurately model?</li>
+              <ul> <li class="fragment" data-fragment-index="4"><span class="fragment highlight-current-blue" data-fragment-index="4">The inviscid region</span>, <span class="fragment highlight-current-blue" data-fragment-index="5">the boundary layer</span>, or <span class="fragment highlight-current-blue" data-fragment-index="6">the separated/wake region</span>?</li> </ul>
+              <ul class="fragment" data-fragment-index="7">
                 <li>
                   For more info refer to (e.g.) papers on
                   <a href="https://ntrs.nasa.gov/api/citations/20010080473/downloads/20010080473.pdf" target="_blank">
@@ -518,22 +515,25 @@
         <div class="container">
           <div class="col">
             <p>
-              Closer inspection of the flow past a circular cylinder and sphere as a function of $Re$.
+              Closer inspection of the flow past a circular cylinder and sphere as a function of $\text{Re}$.
             </p>
             <ul>
-              <li class="fragment" data-fragment-index="1">Drag crisis (E): Sudden drop at $10^5 \lt Re \lt 10^6$</li>
+              <li class="fragment" data-fragment-index="0">At very low $\text{Re} \lt1$: Drag scales with the charatheristic <em>viscous stress $\mu U/l$</em>, meaning that, $C_D \propto 1/\text{Re}$</li>
+              <li class="fragment" data-fragment-index="1">At moderate/high $\text{Re} \gt 10^3$: Drag scales with the <em>dynamic pressure $\rho U^2/2$</em> and $C_D$ is largely independent of $\text{Re}$</li>
+              <ul><li class="fragment" data-fragment-index="2">Except during the "Drag Crisis" (E): A sudden large drop of $C_D$ at $10^5 \lt \text{Re} \lt 10^6$</li></ul>
             </ul>
-            <img src="img/fig9-21a.png" alt="CD for circ cylinder and sphere"
-              style="max-width: 100%; margin-top: 10px;">
             <ul>
               <li class="fragment" data-fragment-index="3">Surface roughness can trigger turbulent BL at lower $Re$</li>
+              <ul>
               <li class="fragment" data-fragment-index="4">Typical golf balls: $10^4 \lt Re \lt 10^5$</li>
               <li class="fragment" data-fragment-index="5"><em>Why do golf balls have dimples?</em></li>
+              </ul>
             </ul>
           </div>
-          <div class="col" style="display: flex; justify-content: center; align-items: center;">
+          <div class="col" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <img src="img/fig9-21a.png" alt="CD for circ cylinder and sphere" style="max-width: 78%; margin-top: 10px; margin-bottom: 0px;"> 
             <img class="fragment" data-fragment-index="2" src="img/fig9-21b.png"
-              alt="Flow for different Re on circ cylinder" style="max-width: 70%; margin-top: 20px;">
+              alt="Flow for different Re on circ cylinder" style="max-width: 45%; margin-top: 0px;">
           </div>
         </div>
       </section>

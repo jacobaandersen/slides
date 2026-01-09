@@ -944,17 +944,19 @@
                 </span>
               </p>
               <ul>
-              <li class="fragment">We see that $\nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V})$ is the divergence of an outer product (dyadic product) and can be rewritten</li>
+              <li class="fragment">Application of Leibniz product rule on first term:</li>
+              <span class="fragment">$$\frac{\partial}{\partial t} (\rho \boldsymbol{V}) =  \rho \frac{\partial \boldsymbol{V}}{\partial t} +  \boldsymbol{V} \frac{\partial \rho}{\partial t}$$ </span>
+              <li class="fragment">Application of Leibniz product rule on second term (divergence of a dyad/outer product of two vectors):</li>
               <span class="fragment"> $$\nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V}) = \rho (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} + \boldsymbol{V} (\nabla \cdot (\rho \boldsymbol{V}))$$ </span>
               <li class="fragment"> Insertion and rearrangement
-                $$ \delta \boldsymbol{F} = \left( \rho \left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) + \boldsymbol{V} \left( \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \boldsymbol{V})\right) \right) \, \delta x\, \delta y\, \delta z $$
+                $$ \delta \boldsymbol{F} = \left( \rho \left( \frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} \right) + \boldsymbol{V} \left( \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \boldsymbol{V})\right) \right) \, \delta x\, \delta y\, \delta z \textcolor{#cc445b00}{= \rho \left( \frac{D \boldsymbol{V}}{D t}  \right) \, \delta x\, \delta y\, \delta z} $$
               </li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- Applying continuity equation -->
+      <!-- Applying continuity equation and material derivative -->
       <section>
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
@@ -966,18 +968,20 @@
                   +  
                   \nabla \cdot (\rho\boldsymbol{V}\boldsymbol{V}) \, \delta x\, \delta y\, \delta z
                   $$
-                  $$ \Updownarrow $$
-                  $$ \delta \boldsymbol{F} = \left( \frac{\partial}{\partial t} (\rho \boldsymbol{V}) + \nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V}) \right) \, \delta x\, \delta y\, \delta z $$
+                  <span>
+                    $$ \Updownarrow $$
+                    $$ \delta \boldsymbol{F} = \left( \frac{\partial}{\partial t} (\rho \boldsymbol{V}) + \nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V}) \right) \, \delta x\, \delta y\, \delta z $$
+                  </span>
                 </span>
               </p>
               <ul>
-              <li>We see that $\nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V})$ is the divergence of an outer product (dyadic product) and can be rewritten</li>
+              <li>Application of Leibniz product rule on first term:</li>
+              <span>$$\frac{\partial}{\partial t} (\rho \boldsymbol{V}) =  \rho \frac{\partial \boldsymbol{V}}{\partial t} +  \boldsymbol{V} \frac{\partial \rho}{\partial t}$$ </span>
+              <li>Application of Leibniz product rule on second term (divergence of a dyad/outer product of two vectors):</li>
               <span> $$\nabla \cdot (\rho \boldsymbol{V}\boldsymbol{V}) = \rho (\boldsymbol{V} \cdot \nabla) \boldsymbol{V} + \boldsymbol{V} (\nabla \cdot (\rho \boldsymbol{V}))$$ </span>
-              <li> Insertion and rearrangement
-                $$ \delta \boldsymbol{F} = \left( \rho \left( \textcolor{#cc445b}{\frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V}} \right) + \cancel{ \boldsymbol{V} \left( \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \boldsymbol{V})\right) } \right) \, \delta x\, \delta y\, \delta z $$
+              <li> Applying the <span style="color: var(--haervig-pink-dark);">material derivative</span> and the <span style="color: var(--haervig-blue-light);">(compressible) continuity equation</span>
+                $$ \delta \boldsymbol{F} = \left( \rho \left( \textcolor{#cc445b}{\frac{\partial \boldsymbol{V}}{\partial t} + (\boldsymbol{V} \cdot \nabla) \boldsymbol{V}} \right) +  \textcolor{#31a9c1}{\cancel{ \boldsymbol{V} \left( \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \boldsymbol{V})\right) }} \right) \, \delta x\, \delta y\, \delta z = \rho \left( \frac{D \boldsymbol{V}}{D t}  \right) \, \delta x\, \delta y\, \delta z$$  
               </li>
-              <li>Applying the definition of the <span style="color: var(--haervig-pink-dark);">material derivative</span> and the <em>(compressible) continuity equation</em></li>
-              <span> $$ \delta \boldsymbol{F} = \rho \left( \frac{D \boldsymbol{V}}{D t}  \right) \, \delta x\, \delta y\, \delta z $$</span>
               <span class="fragment">
                 <li>Conservation of linear momentum on infinitesimal CV $\rightarrow$ differential form of Newton's 2nd law </li>
                 $$ \delta \boldsymbol{F} = \delta m \ \boldsymbol{a} $$
