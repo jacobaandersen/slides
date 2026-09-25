@@ -78,8 +78,8 @@
               </li>
             </ul>
             <div class="fragment" style="font-size:0.75em; color: #555; text-align: center;">
-              <p>Flow over stalled airfoil</p>
-              <iframe width="560" height="315" data-src="https://www.youtube.com/embed/-1h9frhwVEI?autoplay=1&mute=1"
+              <p>Flow over stalled airfoil!</p>
+              <iframe width="960" height="540" style="width: 70vw; max-width: 960px; aspect-ratio: 16 / 9; height: auto;" data-src="https://www.youtube.com/embed/-1h9frhwVEI?autoplay=1&mute=1&controls=0&color=white"
                 src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <ul>
@@ -203,14 +203,14 @@
             <!-- Video player -->
             <div style="margin: 2em auto; max-width: 739px; text-align: center;">
               <iframe name="nse-player" width="739" height="416"
-                data-src="https://www.youtube.com/embed/EvSDFRfJToQ?autoplay=1&mute=1" src=""
+                data-src="https://www.youtube.com/embed/EvSDFRfJToQ?autoplay=1&mute=1&controls=0&color=white&rel=0" src=""
                 allow="autoplay;encrypted-media" allowfullscreen></iframe>
             </div>
 
             <!-- Video gallery -->
             <div style="display: flex; flex-wrap: wrap; gap: 2em; justify-content: center; align-items: flex-start;">
               <div style="width: 320px; text-align: center;">
-                <a href="https://www.youtube.com/embed/EvSDFRfJToQ?autoplay=1&mute=1" target="nse-player">
+                <a href="https://www.youtube.com/embed/EvSDFRfJToQ?autoplay=1&mute=1&controls=0&color=white" target="nse-player">
                   <img src="https://img.youtube.com/vi/EvSDFRfJToQ/0.jpg" alt="Airflow in a Room"
                     style="width:100%; border-radius:8px;">
                   <div style="margin-top:0.5em;">Promenade flooding</div>
@@ -218,7 +218,7 @@
               </div>
 
               <div style="width: 320px; text-align: center;">
-                <a href="https://www.youtube.com/embed/qEtcCjln-0Q?start=140&autoplay=1&mute=1" target="nse-player">
+                <a href="https://www.youtube.com/embed/qEtcCjln-0Q?start=140&autoplay=1&mute=1&controls=0&color=white" target="nse-player">
                   <img src="https://img.youtube.com/vi/qEtcCjln-0Q/0.jpg" alt="Car Aerodynamics"
                     style="width:100%; border-radius:8px;">
                   <div style="margin-top:0.5em;">Wakes in wind farm <span style="color:#888;">(starts at 2:20)</span>
@@ -227,7 +227,7 @@
               </div>
 
               <div style="width: 320px; text-align: center;">
-                <a href="https://www.youtube.com/embed/0s-dVwlBXqM?autoplay=1&mute=1" target="nse-player">
+                <a href="https://www.youtube.com/embed/0s-dVwlBXqM?autoplay=1&mute=1&controls=0&color=white" target="nse-player">
                   <img src="https://img.youtube.com/vi/0s-dVwlBXqM/0.jpg" alt="Wind Flow Around Buildings"
                     style="width:100%; border-radius:8px;">
                   <div style="margin-top:0.5em;">Air flow in data center</div>
@@ -235,7 +235,7 @@
               </div>
 
               <div style="width: 320px; text-align: center;">
-                <a href="https://www.youtube.com/embed/y1sSRXFBN7k?start=73&autoplay=1&mute=1" target="nse-player">
+                <a href="https://www.youtube.com/embed/y1sSRXFBN7k?start=73&autoplay=1&mute=1&controls=0&color=white" target="nse-player">
                   <img src="https://img.youtube.com/vi/y1sSRXFBN7k/0.jpg" alt="Turbulence in Water"
                     style="width:100%; border-radius:8px;">
                   <div style="margin-top:0.5em;">Wind in urban area <span style="color:#888;">(starts at
@@ -333,7 +333,8 @@
             <br>
             <ul>
               <li class="fragment">System approach (rather than CV approach)</li>
-              <li class="fragment">Development of <em>kinematic relations</em> for infinitesimal system (fluid element)</li>
+              <li class="fragment">Goal: Development of <b>kinematic relations</b> between the <em>fluid element (infinitesimal system)</em> and <em>Eulerian velocity field</em></li>
+              <ul><li class="fragment">Useful in the derivation of the Navier-Stokes Equations</li></ul>
             </ul>
           </div>
         </div>
@@ -1160,7 +1161,7 @@
                 \dot{\epsilon}_{zz} \end{matrix} \right] $$
               </li>
               </span>
-              <li class="fragment">Recalling our kinematic relations developed with the fluid element</li>
+              <li class="fragment">Have we now simply shifted the problem?</li>
             </ul>
           </div>
         </div>
@@ -1187,7 +1188,7 @@
               \dot{\gamma}_{yx} & 2 \dot{\epsilon}_{yy} & \dot{\gamma}_{yz} \\ \dot{\gamma}_{zx} & \dot{\gamma}_{zy} & 2
               \dot{\epsilon}_{zz} \end{matrix} \right] $$
               </span>
-              <li>Recalling our kinematic relations developed with the fluid element</li>
+              <li>Recalling our <em>fluid element kinematics</em></li>
               <ul>
                 <span>
                   <li>Strain rates were expressed in terms of velocity gradients</li>
