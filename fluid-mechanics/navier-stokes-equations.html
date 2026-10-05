@@ -1138,7 +1138,7 @@
                 </span>
                 <li class="fragment">Can we solve the flow field now?</li>
                 <ul>
-                <li class="fragment">No, more unknowns (6 stress components, 3 velocity components, pressure and density) than equations <em>→ Ill-posed problem </em></li>
+                <li class="fragment">No, more unknowns (6 stress components, 3 velocity components, and density) than equations <em>→ Ill-posed problem </em></li>
               </ul>
             </ul>
           </div>
@@ -1158,7 +1158,7 @@
                 & 0 & -p \end{bmatrix} + \begin{bmatrix} \tau_{xx} & \tau_{xy} & \tau_{xz} \\ \tau_{yx} & \tau_{yy} &
                 \tau_{yz} \\ \tau_{zx} & \tau_{zy} & \tau_{zz} \end{bmatrix} $$
               </li>
-              <li class="fragment">Constitutive relation for an incompressible <b>Newtonian fluid</b>: <em>Viscous stresses
+              <li class="fragment">Constitutive relation for an <em>incompressible</em> <b>Newtonian fluid</b>: <em>Viscous stresses
                   are linearly proportional to strain rates</em>
                 $$\boldsymbol{\tau} = \mu \boldsymbol{S} $$</li>
               <li class="fragment" style="list-style: none"> with the strain rate tensor
@@ -1186,7 +1186,7 @@
                 & 0 & -p \end{bmatrix} + \begin{bmatrix} \tau_{xx} & \tau_{xy} & \tau_{xz} \\ \tau_{yx} & \tau_{yy} &
                 \tau_{yz} \\ \tau_{zx} & \tau_{zy} & \tau_{zz} \end{bmatrix} $$
               </li>
-              <li>Constitutive relation for an incompressible <b>Newtonian fluid</b>: <em>Viscous stresses
+              <li>Constitutive relation for an <em>incompressible</em> <b>Newtonian fluid</b>: <em>Viscous stresses
                   are linearly proportional to strain rates</em>
                 $$\boldsymbol{\tau} = \mu \boldsymbol{S} $$</li>
               <li style="list-style: none"> with the strain rate tensor </li>
@@ -1218,7 +1218,7 @@
         <h2>Derivation of the Navier-Stokes Equations</h2>
         <div class="container">
           <div class="col">
-            <p>Stress tensor for <em>incompressible Newtonian fluid</em>
+            <p>Stress tensor for <em>incompressible</em> <b>Newtonian fluid</b>
               $$
                 \boldsymbol{\sigma} = -p \boldsymbol{I_3} + \mu (\nabla \boldsymbol{V} + (\nabla \boldsymbol{V})^{\mathrm{T}})
               $$
@@ -1478,9 +1478,10 @@
   </div>
 
   <script type="module" src="../../main.js"></script>
+  <!-- Use 'linear' for presentation with 1-D pointer, and 'grid' as standard 2-D navigation -->
   <script type="module">
     import Reveal from '../../reveal.js/dist/reveal.esm.js';
-    Reveal.configure({ navigationMode: 'linear' });
+    Reveal.configure({ navigationMode: 'grid' }); 
   </script>
 </body>
 
