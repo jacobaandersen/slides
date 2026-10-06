@@ -30,12 +30,12 @@
           <h2>Complexities involved in the Navier-Stokes Equations</h2>
           <div class="container">
             <div class="col">
-              <p><em>No universal analytical solution</em> due to non-linearities ($u \ \partial u/\partial x$)</p>
+              <p class="fragment"><em>No universal analytical solution</em> due to non-linearities arising from <br> the <em>convective</em> acceleration terms</p>
               <ul>
                   <li class="fragment">Solution <em>approximated</em> using <em>numerical methods</em> (e.g. CFD)</li>
                   <li class="fragment">Solution found by <em>experiments</em></li>
               </ul>
-              <p class="fragment">Analytical solutions for <em> only a few problems</em> where <em>convective accerelation</em> becomes negligible</p>
+              <p class="fragment">Analytical solutions for <em> only a few problems</em> where convective accerelation becomes negligible</p>
               <ul>
                   <li class="fragment"><em>Simple geometries</em>: Flow between two plates or in a tube (internal flows)</em></li>
                   <li class="fragment"><em>Simple flows</em>: Steady, laminar and fully-developed flows</li>
@@ -65,12 +65,21 @@
           <h2>Why look at these <em> simplified </em>problems?</h2>
           <div class="container">
             <div class="col">
-              <img src="img/applications-analytical-solutions1.jpg" width="800"/>
-              <img class="fragment" data-fragment-index="1" src="img/applications-analytical-solutions2.jpg" width="800"/>
-              <img class="fragment" data-fragment-index="2" src="img/applications-analytical-solutions3.jpg" width="800"/>
-            </div>
-            <div class="col">
-              <img class="fragment" data-fragment-index="4" src="img/applications-analytical-solutions5.jpg" width="900"/>
+              <p>Viscous pipe flow matters where wall friction affects flow rate, pressure loss, or energy use:</p>
+              <ul>
+                <li class="fragment"><em>Heat exchangers:</em> flow through tubes transfers heat between process streams</li>
+                <li class="fragment"><em>Water systems:</em> drinking-water networks, irrigation, and wastewater pipes</li>
+                <li class="fragment"><em>Oil and gas:</em> long-distance pipelines carrying crude oil and natural gas</li>
+                <li class="fragment"><em>Process and food plants:</em> pipes transporting chemicals and oils</li>
+                <li class="fragment"><em>Heating and power:</em> district energy networks and water or steam circulation</li>
+              </ul>
+                <p class="fragment"><b>Educational value</b></>
+              <ul>
+                <li class="fragment"> One of the few <em>analytical</em> solutions to the Navier-Stokes equations (NSE). </li>
+                <li class="fragment"> Showcasing effects of pressure gradients, shear stresses, and velocity profiles. </li>
+                <li class="fragment"> Serves as a <em>building block</em> for more complex flows. </li>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -381,7 +390,7 @@ boundaryField
               <p class="singleline-math fragment small-left-padding " data-fragment-index="4">
                 <span class="highlight">\( u(y) = U \dfrac{y}{b} + \dfrac{1}{2\mu} \dfrac{\partial p}{\partial x} (y^2 - by) \)</span>
               </p>
-              <p class="fragment" data-fragment-index="5">Falls back to Poiseuille flow when \(U=0\)</p>
+              <p class="fragment" data-fragment-index="5">Falls back to plane Poiseuille flow when \(U=0\)</p>
               
             </div>
             <div class="col">
