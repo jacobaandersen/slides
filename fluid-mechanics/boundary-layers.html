@@ -199,6 +199,120 @@
         </div>
       </section>
 
+      <section>
+        <div class="container">
+          <div class="col">
+            <h3>Pressure Gradients and Boundary Layers</h3>
+            <p><em>Flat plate:</em> uniform outer flow does not yield a pressure gradient (streamlines negligibly deformed).</p>
+            <p class="fragment"  data-fragment-index="2"><em>Bluff or curved body:</em> changing outer streamlines cause a pressure gradient along the surface.</p>
+            <ul>
+            <li class="fragment" data-fragment-index="3"><em>Favorable:</em> pressure decreases and the outer flow accelerates.</li>
+                <li class="fragment" data-fragment-index="4"><em>Adverse:</em> pressure increases and the outer flow decelerates.</li>
+              </ul>
+          </div>
+          <div class="col">
+            <img class="fragment" data-fragment-index="2" src="img/figMargin-p489-1.png?v=2" alt="Different surface pressures and outer-flow velocities along a curved surface"
+              style="max-width: 68%; height: auto; margin: 2em 0 0 auto;">
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="col">
+            <h3>Inviscid Flow Around a Circular Cylinder</h3>
+            <p>Inviscid theory can give a solution for the pressure distribution and drag on a circular cylinder.</p>
+            <ul>
+              
+              <li class="fragment" data-fragment-index="1">The free-stream speed is zero at the front and rear stagnation points, and maximum at the top and bottom of the cylinder.</li>
+              <li class="fragment" data-fragment-index="2">The inviscid pressure distribution is symmetric from front to rear.</li>
+              <li class="fragment" data-fragment-index="3">With no viscosity there is no wall shear, and the symmetric pressure forces cancel:</li>
+            </ul>
+              <p class="fragment" data-fragment-index="5">$$&#92;mathcal{D}=0$$</p>
+              <ul>
+              <li class="fragment" data-fragment-index="6"><em>Would we expect this from common experience?</em></li>
+            </ul>
+          </div>
+          <div class="col">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+              <img src="img/figMargin-p489-2.png?v=2" alt="Outer-flow speed around a cylinder"
+                style="max-width: 42%; max-height: 23vh; width: auto; height: auto; ">
+              <img src="img/fig9-16.png?v=2" alt="Flow, pressure, and velocity distributions around a cylinder"
+                style="max-width: 100%; max-height: 70vh; width: auto; height: auto;">
+            </div>
+          </div>
+        </div>
+      </section>
+
+<section>
+        <div class="container">
+          <div class="col">
+            <h3>Viscous Flow Around a Circular Cylinder and d'Alembert's Paradox</h3>
+            <p>Adding viscosity introduces viscous effects and a finite drag can be measured (as we would expect).</p>
+            <p class="fragment" data-fragment-index="1"><em>However, what happens when $\mu$ approach zero?</em></p>
+            <p class="fragment" data-fragment-index="2" style="text-align: center;"><b>d'Alambert's paradox</b> unfolds: <br> $$&#92;mu=0 &#92;; &#92;Rightarrow &#92;; &#92;mathcal{D}=0 \qquad&#92;text{but}&#92;qquad \lim_{&#92;mu&#92;to 0}&#92;mathcal{D} &#92;neq 0$$</p>
+            <p class="fragment" data-fragment-index="3">Great mystery in fluid mechanics for more than a century - solved by Prandtl by accounting for viscous effects in thin BL.</p>
+              
+          </div>
+          <div class="col">
+            
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="col">
+            <h3>Viscous Flow Around a Circular Cylinder and d'Alembert's Paradox</h3>
+              <p>For practical $&#92;mathrm{Re}$, we expect $&#92;delta &#92;ll l_{&#92;mathrm{char}}$ and the BL does not greatly affect the entire flow.</p>
+              <ul>
+              <li class="fragment" data-fragment-index="1">Therefore, we can reuse the inviscid solution to approximate the wall-tangential and wall-normal pressure gradients in the <em>viscous</em> BL.</li>
+              <ul>
+              <li class="fragment" data-fragment-index="3">Recall that a fluid particle in the BL experience first a favorable pressure gradient, then an adverse pressure gradient.</li>
+              </ul>
+              <ul>
+              <li class="fragment" data-fragment-index="4">For the inviscid solution, the <em>total energy was constant</em> and the particle balanced its pressure and kinetic energy as it travelled in the BL. </li>
+              <li class="fragment" data-fragment-index="5">However, <em>in reality, viscous effects dissipate energy</em> as heat and the particle <em>cannot overcome the adverse pressure gradient</em>.</li>
+              <li class="fragment" data-fragment-index="6">The particle slows down (kinetic energy deficit in figure), then stops, and ultimately reverses direction: the BL separates from the surface.</li>
+              <li class="fragment" data-fragment-index="8">A large wake of constant, low pressure is formed behind the separation point, and the drag is dominated by this under-pressure.</li>
+              <li class="fragment" data-fragment-index="9"><em>Separation causes the drag!</em></li>
+              
+            </ul>
+          </div>
+          <div class="col">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+              <img class="fragment" data-fragment-index="5" src="img/fig9-17a.png?v=2" alt="Boundary-layer velocity profiles approaching separation"
+                style="max-width: 100%; max-height: 55vh; width: auto; height: auto;">
+              <img class="fragment" data-fragment-index="7" src="img/fig9-17b.png?v=2" alt="Boundary-layer growth, separation, backflow, and wake around a cylinder"
+                style="max-width: 100%; max-height: 50vh; width: auto; height: auto;">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="col">
+            <h3>Delay of Separation from Turbulence</h3>
+            
+                <p ><b>Turbulence can delay separation:</b></p>
+                <ul>
+                  <li class="fragment" data-fragment-index="1">Later separation point</li>
+                  <li class="fragment" data-fragment-index="2">Reduced wake size</li>
+                  <li class="fragment" data-fragment-index="3">Decreased drag</li>
+                </ul>
+              </li>
+              <p class="fragment" data-fragment-index="4">A bowling ball dropped in water illustrates the difference: a smooth surface supports a largely laminar boundary layer, while roughness can trigger turbulence and delay separation.</p>
+            
+          </div>
+          <div class="col">
+            <img src="img/fig9-18.png?v=2" alt="Smooth and rough bowling balls in water"
+              style="max-width: 100%; max-height: 62vh; width: auto; height: auto;">
+            <p class="smaller-font" style="text-align: center;"></p>
+          </div>
+        </div>
+      </section>
+
     </div>
   </div>
   <script type="module" src="../../main.js"></script>
