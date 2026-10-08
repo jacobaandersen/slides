@@ -7,6 +7,9 @@ build/
 *.aup
 *.mov
 *.pdf
+# Generated slide-deck PDFs (see tools/generate_pdfs.js) are published
+# alongside their .html source, so track them despite the *.pdf rule above.
+!fluid-mechanics/*.pdf
 *.cropped.mp4
 media/audio/**/fragments
 *.ipynb_checkpoints

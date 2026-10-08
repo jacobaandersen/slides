@@ -26,7 +26,11 @@ for folder in sorted(os.listdir(base_dir)):
             t_obj = time.strptime(m_ti)
             T_stamp = time.strftime("%Y-%m-%d %H:%M:%S", t_obj)
 
-            download_link = file_path + "?print-pdf"
+            # Prefer a pre-generated static PDF (see tools/generate_pdfs.js) so
+            # the link downloads a real file instead of opening the live
+            # print view. Falls back to the live view if no PDF exists yet.
+            pdf_path = file_path[:-5] + ".pdf"
+            download_link = pdf_path if os.path.exists(pdf_path) else file_path + "?print-pdf"
             # If the file is 'navier-stokes-equations.html', set display name accordingly
             if file == "navier-stokes-equations.html":
                 title = "The Navier-Stokes Equations"
